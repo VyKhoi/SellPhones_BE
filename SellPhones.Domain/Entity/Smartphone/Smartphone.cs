@@ -1,10 +1,10 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
-    public class Smartphone :IAudit
+    [Table("Smartphone")]
+    public class Smartphone : IAudit
     {
         public int ProductPtrId { get; set; }
 

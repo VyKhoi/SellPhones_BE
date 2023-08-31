@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity.Identity
 {
@@ -7,7 +6,7 @@ namespace CellPhones.Domain.Entity.Identity
     public class UserGroup
     {
         //[Key]
-        [Column(Order =1)]
+        [Column(Order = 1)]
         public Guid GroupId { get; set; }
 
         [ForeignKey("GroupId")]
@@ -19,6 +18,5 @@ namespace CellPhones.Domain.Entity.Identity
 
         [ForeignKey("UserId")]
         public virtual User? User { get; set; }
-
     }
 }

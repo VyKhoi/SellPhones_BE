@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj": {}
+    "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj": {
+    "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj",
+        "projectUniqueName": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
         "projectName": "SellPhones.Security",
-        "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj",
-        "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\obj\\",
+        "projectPath": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+        "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Security\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dangv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

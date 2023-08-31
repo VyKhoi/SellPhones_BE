@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.Text;
 using SellPhones.Data.EF;
+using System.Text;
+
 namespace SellPhones.Build
 {
     public class Program
@@ -27,14 +28,13 @@ namespace SellPhones.Build
                 Console.WriteLine("Connection String: {0}", connectionString);
 
                 var optionsBuilder = new DbContextOptionsBuilder<SellPhonesContext>();
-                if (!string.IsNullOrEmpty(connectionString)) 
+                if (!string.IsNullOrEmpty(connectionString))
                     optionsBuilder.UseNpgsql(connectionString);
 
                 using (var context = new BuildDbContext(optionsBuilder.Options))
                 {
                     //context.EnsureSeedDataForContext();
                 }
-
             }
             catch (Exception? ex)
             {
@@ -50,4 +50,3 @@ namespace SellPhones.Build
         }
     }
 }
-

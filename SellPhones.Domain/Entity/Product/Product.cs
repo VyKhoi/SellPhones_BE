@@ -1,9 +1,9 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
+    [Table("Product")]
     public class Product : IAudit
     {
         public int Id { get; set; }
@@ -15,12 +15,14 @@ namespace CellPhones.Domain.Entity
         public string? Type { get; set; }
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
+        public bool IsActive { get; set; } = true;
+        public bool IsDeleted { get; set; } = false;
 
         public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 
         public virtual Earphone? Earphone { get; set; }
 
-        public virtual ICollection<Imageproduct> Imageproducts { get; set; } = new List<Imageproduct>();
+        public virtual ICollection<ImageProduct> ImageProducts { get; set; } = new List<ImageProduct>();
 
         public virtual Laptop? Laptop { get; set; }
 

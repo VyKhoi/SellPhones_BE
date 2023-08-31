@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity.Identity
@@ -18,6 +17,7 @@ namespace CellPhones.Domain.Entity.Identity
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+
         public DateTime AddedTimesTamp { get; set; } = DateTime.UtcNow;
     }
 }

@@ -1,10 +1,10 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
-    public  class Order : IAudit
+    [Table("Order")]
+    public class Order : IAudit
     {
         public int Id { get; set; }
 
@@ -13,15 +13,15 @@ namespace CellPhones.Domain.Entity
         public string DeliveryAddress { get; set; } = null!;
 
         public string DeliveryPhone { get; set; } = null!;
-
+        public bool IsActive { get; set; } = true;
+        public bool IsDeleted { get; set; } = false;
         public string Status { get; set; } = null!;
 
         public Guid? UserId { get; set; }
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-
-        public virtual ICollection<Orderdetail> Orderdetails { get; } = new List<Orderdetail>();
+        public virtual ICollection<OrderDetail> OrderDetails { get; } = new List<OrderDetail>();
 
         public virtual User User { get; set; } = null!;
     }
