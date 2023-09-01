@@ -10,6 +10,7 @@ using SellPhones.Data.EF;
 using System.Reflection;
 using System.Text;
 using System.Xml;
+using SellPhones.Data.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SellPhonesContext>(option =>
 option.UseLazyLoadingProxies()
 .UseNpgsql(builder.Configuration.GetConnectionString("MyDB"))
-);
+).AddUnitOfWork<SellPhonesContext>();
 
 builder.Services.AddApiVersioning(options =>
 {

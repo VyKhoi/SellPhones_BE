@@ -1,0 +1,15 @@
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\bin\Release\net6.0\SellPhones.Domain.deps.json
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\bin\Release\net6.0\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\bin\Release\net6.0\SellPhones.Domain.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\bin\Release\net6.0\SellPhones.Commons.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\bin\Release\net6.0\SellPhones.Commons.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.csproj.AssemblyReference.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.AssemblyInfoInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.AssemblyInfo.cs
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.csproj.CopyComplete
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\refint\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\SellPhones.Domain.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Domain\obj\Release\net6.0\ref\SellPhones.Domain.dll
