@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity.Identity
-{ 
+{
     [Table("GroupRoles")]
     public class GroupRole
     {

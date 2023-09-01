@@ -1,9 +1,9 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
+    [Table("Laptop")]
     public class Laptop : IAudit
     {
         public int Id { get; set; }
@@ -23,7 +23,6 @@ namespace CellPhones.Domain.Entity
         public string Others { get; set; } = null!;
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
-
 
         public virtual Product Product { get; set; } = null!;
     }

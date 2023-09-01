@@ -1,9 +1,9 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
+    [Table("Earphone")]
     public class Earphone : IAudit
     {
         public int ProductPtrId { get; set; }
@@ -15,7 +15,6 @@ namespace CellPhones.Domain.Entity
         public string FrequencyResponse { get; set; } = null!;
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
-
 
         public virtual Product ProductPtr { get; set; } = null!;
     }

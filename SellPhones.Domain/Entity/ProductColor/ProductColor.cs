@@ -1,9 +1,9 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
+    [Table("ProductColor")]
     public class ProductColor : IAudit
     {
         public int Id { get; set; }
@@ -11,11 +11,12 @@ namespace CellPhones.Domain.Entity
         public decimal Price { get; set; }
 
         public int IdProductId { get; set; }
+        public bool IsActive { get; set; } = true;
+        public bool IsDeleted { get; set; } = false;
 
         public string NameColorId { get; set; } = null!;
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
-
 
         public virtual ICollection<BranchProductColor> BranchProductColors { get; } = new List<BranchProductColor>();
 

@@ -1,6 +1,5 @@
-﻿using CellPhones.Domain.Entity.Identity;
-using CellPhones.Domain.Entity;
-
+﻿using CellPhones.Domain.Entity;
+using CellPhones.Domain.Entity.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,12 +7,11 @@ namespace SellPhones.Data.EF
 {
     public class SellPhonesContext : IdentityDbContext<User, Role, Guid, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
-    
         public SellPhonesContext(DbContextOptions<SellPhonesContext> options)
             : base(options)
         {
         }
-     
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -36,14 +34,13 @@ namespace SellPhones.Data.EF
                .ToTable("UserRoles")
                .HasKey(c => new { c.RoleId, c.UserId });
 
+            ///
 
-            /// 
-     
             modelBuilder.Entity<Branch>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_branch_Id");
 
-                entity.ToTable("branch");
+                entity.ToTable("Branch");
 
                 entity.Property(e => e.Address).HasMaxLength(50);
                 entity.Property(e => e.EstablishmentDate).HasColumnType("date");
@@ -55,7 +52,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_branch_product_color_Id");
 
-                entity.ToTable("branch_product_color");
+                entity.ToTable("BranchProductColor");
 
                 entity.Property(e => e.BranchId).HasColumnName("Branch_id");
                 entity.Property(e => e.ProductColorId).HasColumnName("ProductColor_id");
@@ -75,7 +72,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_branch_promotion_product_Id");
 
-                entity.ToTable("branch_promotion_product");
+                entity.ToTable("BranchPromotionProduct");
 
                 entity.Property(e => e.DiscountRate).HasColumnName("discountRate");
                 entity.Property(e => e.IdBrandProductColorId).HasColumnName("idBrandProductColor_id");
@@ -96,7 +93,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Names).HasName("PK_color_names");
 
-                entity.ToTable("color");
+                entity.ToTable("Color");
 
                 entity.Property(e => e.Names)
                     .HasMaxLength(50)
@@ -107,7 +104,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_comment_Id");
 
-                entity.ToTable("comment");
+                entity.ToTable("Comment");
 
                 entity.Property(e => e.ContentComment)
                     .HasMaxLength(100)
@@ -135,7 +132,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.ProductPtrId).HasName("PK_earphone_product_ptr_id");
 
-                entity.ToTable("earphone");
+                entity.ToTable("Earphone");
 
                 entity.Property(e => e.ProductPtrId)
                     .ValueGeneratedNever()
@@ -154,11 +151,11 @@ namespace SellPhones.Data.EF
                     .HasConstraintName("earphone$earphon_product_ptr_id_af17d76e_fk_cellphone");
             });
 
-            modelBuilder.Entity<Imageproduct>(entity =>
+            modelBuilder.Entity<ImageProduct>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_imageproduct_Id");
 
-                entity.ToTable("imageproduct");
+                entity.ToTable("ImageProduct");
 
                 entity.Property(e => e.ProductId).HasColumnName("idProduct_id");
                 entity.Property(e => e.LinkImg)
@@ -166,7 +163,7 @@ namespace SellPhones.Data.EF
                     .HasColumnName("linkImg");
                 entity.Property(e => e.Name).HasMaxLength(50);
 
-                entity.HasOne(d => d.Product).WithMany(p => p.Imageproducts)
+                entity.HasOne(d => d.Product).WithMany(p => p.ImageProducts)
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("imageproduct$imagepr_idProduct_id_4de16385_fk_cellphone");
@@ -176,7 +173,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_laptop_product_ptr_id");
 
-                entity.ToTable("laptop");
+                entity.ToTable("Laptop");
 
                 entity.Property(e => e.Id)
                     .ValueGeneratedNever()
@@ -209,7 +206,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Names).HasName("PK_manufacture_names");
 
-                entity.ToTable("manufacture");
+                entity.ToTable("Manufacture");
 
                 entity.Property(e => e.Names)
                     .HasMaxLength(100)
@@ -220,7 +217,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_order_Id");
 
-                entity.ToTable("order");
+                entity.ToTable("Order");
 
                 entity.Property(e => e.DeliveryAddress)
                     .HasMaxLength(50)
@@ -240,11 +237,11 @@ namespace SellPhones.Data.EF
                     .HasConstraintName("order$order_idUser_id_bb73099a_fk_user_Id");
             });
 
-            modelBuilder.Entity<Orderdetail>(entity =>
+            modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_orderdetail_Id");
 
-                entity.ToTable("orderdetail");
+                entity.ToTable("OrderDetail");
 
                 entity.Property(e => e.BrandProductColorId).HasColumnName("idBrandProductColor_id");
                 entity.Property(e => e.OderId).HasColumnName("idOder_id");
@@ -252,12 +249,12 @@ namespace SellPhones.Data.EF
                     .HasColumnType("decimal(10, 2)")
                     .HasColumnName("unit_price");
 
-                entity.HasOne(d => d.BrandProductColor).WithMany(p => p.Orderdetails)
+                entity.HasOne(d => d.BrandProductColor).WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.BrandProductColorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("orderdetail$orderde_idBrandProductColor__980f79ef_fk_cellphone");
 
-                entity.HasOne(d => d.Oder).WithMany(p => p.Orderdetails)
+                entity.HasOne(d => d.Oder).WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("orderdetail$orderde_idOder_id_6730d0c3_fk_cellphone");
@@ -267,7 +264,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_product_Id");
 
-                entity.ToTable("product");
+                entity.ToTable("Product");
 
                 entity.Property(e => e.Name).HasMaxLength(100);
                 entity.Property(e => e.NameManufactureId)
@@ -285,7 +282,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_product_color_Id");
 
-                entity.ToTable("product_color");
+                entity.ToTable("ProductColor");
 
                 entity.Property(e => e.IdProductId).HasColumnName("idProduct_id");
                 entity.Property(e => e.NameColorId)
@@ -308,7 +305,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_promotion_Id");
 
-                entity.ToTable("promotion");
+                entity.ToTable("Promotion");
 
                 entity.Property(e => e.TimeEnd)
                     .HasPrecision(6)
@@ -322,7 +319,7 @@ namespace SellPhones.Data.EF
             {
                 entity.HasKey(e => e.Id).HasName("PK_review_Id");
 
-                entity.ToTable("review");
+                entity.ToTable("Review");
 
                 entity.Property(e => e.IdProductId).HasColumnName("idProduct_id");
                 entity.Property(e => e.Title).HasMaxLength(100);
@@ -333,12 +330,11 @@ namespace SellPhones.Data.EF
                     .HasConstraintName("review$review_idProduct_id_4ede3625_fk_cellphone");
             });
 
-           
             modelBuilder.Entity<Smartphone>(entity =>
             {
                 entity.HasKey(e => e.ProductPtrId).HasName("PK_smartphone_product_ptr_id");
 
-                entity.ToTable("smartphone");
+                entity.ToTable("Smartphone");
 
                 entity.Property(e => e.ProductPtrId)
                     .ValueGeneratedNever()
@@ -363,12 +359,7 @@ namespace SellPhones.Data.EF
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("smartphone$smartph_product_ptr_id_a0e68210_fk_cellphone");
             });
-
-          
         }
-           
-
-
 
         public virtual DbSet<GroupRole> GroupRole { get; set; }
         public virtual DbSet<Role> Role { get; set; }
@@ -378,6 +369,7 @@ namespace SellPhones.Data.EF
         public virtual DbSet<UserGroup> UserGroup { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<Group> Group { get; set; }
+        public virtual DbSet<UserVerification> UserVerification { get; set; }
 
         ///
 
@@ -393,7 +385,7 @@ namespace SellPhones.Data.EF
 
         public virtual DbSet<Earphone> Earphones { get; set; }
 
-        public virtual DbSet<Imageproduct> Imageproducts { get; set; }
+        public virtual DbSet<ImageProduct> ImageProducts { get; set; }
 
         public virtual DbSet<Laptop> Laptops { get; set; }
 
@@ -401,7 +393,7 @@ namespace SellPhones.Data.EF
 
         public virtual DbSet<Order> Orders { get; set; }
 
-        public virtual DbSet<Orderdetail> Orderdetails { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
         public virtual DbSet<Product> Products { get; set; }
 
@@ -416,6 +408,5 @@ namespace SellPhones.Data.EF
         public virtual DbSet<Smartphone> Smartphones { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
-
     }
 }

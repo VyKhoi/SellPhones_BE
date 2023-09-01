@@ -1,10 +1,10 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
-    public  class Manufacture :IAudit
+    [Table("Manufacture")]
+    public class Manufacture : IAudit
     {
         public string Names { get; set; } = null!;
         public DateTime? AddedTimestamp { get; set; }

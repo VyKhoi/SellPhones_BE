@@ -1,5 +1,8 @@
-﻿namespace CellPhones.Domain.Entity
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CellPhones.Domain.Entity
 {
+    [Table("Color")]
     public class Color
     {
         public string Names { get; set; } = null!;

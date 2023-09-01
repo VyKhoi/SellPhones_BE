@@ -1,9 +1,9 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
+    [Table("Comment")]
     public class Comment : IAudit
     {
         public int Id { get; set; }
@@ -13,11 +13,11 @@ namespace CellPhones.Domain.Entity
         public int ProductId { get; set; }
 
         public Guid? UserId { get; set; }
-
+        public bool IsActive { get; set; } = true;
+        public bool IsDeleted { get; set; } = false;
         public int? ReplyId { get; set; }
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
-
 
         public virtual Product IdProduct { get; set; } = null!;
 
@@ -26,5 +26,5 @@ namespace CellPhones.Domain.Entity
         public virtual User User { get; set; } = null!;
 
         public virtual ICollection<Comment> InverseIdReplyNavigation { get; } = new List<Comment>();
-        }
+    }
 }

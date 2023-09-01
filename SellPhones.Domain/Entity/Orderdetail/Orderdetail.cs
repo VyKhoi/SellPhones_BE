@@ -1,10 +1,10 @@
 ﻿using CellPhones.Domain.Entity.Identity;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CellPhones.Domain.Entity
 {
-    public class Orderdetail :IAudit
+    [Table("OrderDetail")]
+    public class OrderDetail : IAudit
     {
         public int Id { get; set; }
 

@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 using static CellPhones.Commons.RoleName;
 
@@ -14,6 +13,7 @@ namespace CellPhones.Domain.Entity.Identity
             GroupRoles = new HashSet<GroupRole>();
             UserRoles = new HashSet<UserRole>();
         }
+
         public virtual ICollection<GroupRole> GroupRoles { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public RoleBlock RoleBlock { get; set; }

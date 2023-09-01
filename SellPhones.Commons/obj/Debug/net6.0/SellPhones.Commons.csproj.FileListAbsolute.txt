@@ -10,3 +10,14 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Commons\obj\Debug\net6.0\S
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Commons\obj\Debug\net6.0\refint\SellPhones.Commons.dll
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Commons\obj\Debug\net6.0\ref\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.deps.json
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.AssemblyInfoInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.AssemblyInfo.cs
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.csproj.CoreCompileInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\refint\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\ref\SellPhones.Commons.dll

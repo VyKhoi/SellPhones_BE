@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "/7Iq4wOsYCtcnkPmnnjX4COoyeUGycJQZWEWRKBawJ1yaiGqoNJqg37J/7LFHwAGRgVWAwxHTERq67zPd25fLA==",
+  "dgSpecHash": "4Aqu52YfxshgWLKEaV6sSCuGeePit+IyvboSiQ/H8LILCe/L4BDuIeWuc2NLRbHnGsL98rAJMkziqvR2OidJ2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
