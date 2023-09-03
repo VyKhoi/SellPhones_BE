@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SellPhones.API.Authentication;
+using SellPhones.Data.DI;
 using SellPhones.Data.EF;
 using System.Reflection;
 using System.Text;
 using System.Xml;
-using SellPhones.Data.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -62,6 +62,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
     });
+
     c.AddSecurityRequirement(new OpenApiSecurityRequirement {
                        {
                              new OpenApiSecurityScheme
@@ -75,9 +76,9 @@ builder.Services.AddSwaggerGen(c =>
                           new string[] { }
                         }
                       });
-    //using System.Reflection;
-    //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    //c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 builder.Services.AddAuthentication(options =>
@@ -120,12 +121,12 @@ log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
+app.UseSwaggerUI();
+//}
 
 app.UseHttpsRedirection();
 

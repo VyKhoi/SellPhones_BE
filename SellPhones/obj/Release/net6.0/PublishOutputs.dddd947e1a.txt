@@ -52,4 +52,5 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\Out\SellPhones.Build.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\Out\SellPhones.Commons.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\Out\SellPhones.Domain.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\Out\SellPhones.API.xml
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\PubTmp\Out\SellPhones.API.deps.json

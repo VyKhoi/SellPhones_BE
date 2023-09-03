@@ -8,7 +8,7 @@ namespace SellPhones.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        "saaaaaa", "aaaaaaaaaa vỹ khôi", " vỹ khôi", "aaaaaCoolvl", " vỹ khôi", " aaavỹ khôi k","  vỹ khôiBalmy", "Hot", "Sweltering", "Scorching"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;

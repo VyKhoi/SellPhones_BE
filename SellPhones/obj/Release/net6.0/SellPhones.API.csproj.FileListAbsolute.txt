@@ -76,3 +76,5 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\refint\
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\SellPhones.API.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\SellPhones.API.genruntimeconfig.cache
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\ref\SellPhones.API.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Release\net6.0\SellPhones.API.xml
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Release\net6.0\SellPhones.API.xml
