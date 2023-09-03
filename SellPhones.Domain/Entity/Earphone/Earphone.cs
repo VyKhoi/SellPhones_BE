@@ -6,7 +6,7 @@ namespace CellPhones.Domain.Entity
     [Table("Earphone")]
     public class Earphone : IAudit
     {
-        public int ProductPtrId { get; set; }
+        public int Id { get; set; }
 
         public string ConnectionType { get; set; } = null!;
 
@@ -16,6 +16,6 @@ namespace CellPhones.Domain.Entity
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-        public virtual Product ProductPtr { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
     }
 }

@@ -19,12 +19,12 @@ namespace CellPhones.Domain.Entity
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-        public virtual Product IdProduct { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
 
-        public virtual Comment? IdReplyNavigation { get; set; }
+        public virtual Comment? ReplyNavigation { get; set; }
 
         public virtual User User { get; set; } = null!;
 
-        public virtual ICollection<Comment> InverseIdReplyNavigation { get; } = new List<Comment>();
+        public virtual ICollection<Comment> InverseIdReplyNavigations { get; } = new List<Comment>();
     }
 }

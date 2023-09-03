@@ -6,7 +6,7 @@ namespace CellPhones.Domain.Entity
     [Table("Manufacture")]
     public class Manufacture : IAudit
     {
-        public string Names { get; set; } = null!;
+        public string Name { get; set; } = null!;
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 

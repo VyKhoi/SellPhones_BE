@@ -82,7 +82,7 @@ namespace SellPhones.Build.Migrations
 
                     b.Property<int>("BranchId")
                         .HasColumnType("integer")
-                        .HasColumnName("Branch_id");
+                        .HasColumnName("BranchId");
 
                     b.Property<DateTime?>("ChangedTimestamp")
                         .HasColumnType("timestamp with time zone");
@@ -95,7 +95,7 @@ namespace SellPhones.Build.Migrations
 
                     b.Property<int>("ProductColorId")
                         .HasColumnType("integer")
-                        .HasColumnName("ProductColor_id");
+                        .HasColumnName("ProductColorId");
 
                     b.HasKey("Id")
                         .HasName("PK_branch_product_color_Id");
@@ -118,20 +118,16 @@ namespace SellPhones.Build.Migrations
                     b.Property<DateTime?>("AddedTimestamp")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("BrandProductColorId")
+                        .HasColumnType("integer")
+                        .HasColumnName("BrandProductColorId");
+
                     b.Property<DateTime?>("ChangedTimestamp")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<double>("DiscountRate")
                         .HasColumnType("double precision")
-                        .HasColumnName("discountRate");
-
-                    b.Property<int>("IdBrandProductColorId")
-                        .HasColumnType("integer")
-                        .HasColumnName("idBrandProductColor_id");
-
-                    b.Property<int>("IdPromotionId")
-                        .HasColumnType("integer")
-                        .HasColumnName("idPromotion_id");
+                        .HasColumnName("DiscountRate");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -139,24 +135,28 @@ namespace SellPhones.Build.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
+                    b.Property<int>("PromotionId")
+                        .HasColumnType("integer")
+                        .HasColumnName("PromotionId");
+
                     b.HasKey("Id")
                         .HasName("PK_branch_promotion_product_Id");
 
-                    b.HasIndex("IdBrandProductColorId");
+                    b.HasIndex("BrandProductColorId");
 
-                    b.HasIndex("IdPromotionId");
+                    b.HasIndex("PromotionId");
 
                     b.ToTable("BranchPromotionProduct", (string)null);
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Color", b =>
                 {
-                    b.Property<string>("Names")
+                    b.Property<string>("Name")
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("names");
+                        .HasColumnName("Name");
 
-                    b.HasKey("Names")
+                    b.HasKey("Name")
                         .HasName("PK_color_names");
 
                     b.ToTable("Color", (string)null);
@@ -180,7 +180,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
-                        .HasColumnName("contentComment");
+                        .HasColumnName("ContentComment");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -190,16 +190,16 @@ namespace SellPhones.Build.Migrations
 
                     b.Property<int>("ProductId")
                         .HasColumnType("integer")
-                        .HasColumnName("idProduct_id");
+                        .HasColumnName("ProductId");
 
                     b.Property<int?>("ReplyId")
                         .HasColumnType("integer")
-                        .HasColumnName("idReply");
+                        .HasColumnName("ReplyId");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
                         .HasColumnType("uuid")
-                        .HasColumnName("idUser_id");
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id")
                         .HasName("PK_comment_Id");
@@ -215,9 +215,9 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Earphone", b =>
                 {
-                    b.Property<int>("ProductPtrId")
+                    b.Property<int>("Id")
                         .HasColumnType("integer")
-                        .HasColumnName("product_ptr_id");
+                        .HasColumnName("Id");
 
                     b.Property<DateTime?>("AddedTimestamp")
                         .HasColumnType("timestamp with time zone");
@@ -229,7 +229,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("connectionType");
+                        .HasColumnName("ConnectionType");
 
                     b.Property<string>("Design")
                         .IsRequired()
@@ -240,9 +240,9 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("Frequency_Response");
+                        .HasColumnName("FrequencyResponse");
 
-                    b.HasKey("ProductPtrId")
+                    b.HasKey("Id")
                         .HasName("PK_earphone_product_ptr_id");
 
                     b.ToTable("Earphone", (string)null);
@@ -626,7 +626,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)")
-                        .HasColumnName("linkImg");
+                        .HasColumnName("LinkImg");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -635,7 +635,7 @@ namespace SellPhones.Build.Migrations
 
                     b.Property<int>("ProductId")
                         .HasColumnType("integer")
-                        .HasColumnName("idProduct_id");
+                        .HasColumnName("ProductId");
 
                     b.HasKey("Id")
                         .HasName("PK_imageproduct_Id");
@@ -649,7 +649,7 @@ namespace SellPhones.Build.Migrations
                 {
                     b.Property<int>("Id")
                         .HasColumnType("integer")
-                        .HasColumnName("product_ptr_id");
+                        .HasColumnName("Id");
 
                     b.Property<DateTime?>("AddedTimestamp")
                         .HasColumnType("timestamp with time zone");
@@ -678,7 +678,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("operatorSystem");
+                        .HasColumnName("OperatorSystem");
 
                     b.Property<string>("Others")
                         .IsRequired()
@@ -705,10 +705,10 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Manufacture", b =>
                 {
-                    b.Property<string>("Names")
+                    b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
-                        .HasColumnName("names");
+                        .HasColumnName("Name");
 
                     b.Property<DateTime?>("AddedTimestamp")
                         .HasColumnType("timestamp with time zone");
@@ -716,7 +716,7 @@ namespace SellPhones.Build.Migrations
                     b.Property<DateTime?>("ChangedTimestamp")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Names")
+                    b.HasKey("Name")
                         .HasName("PK_manufacture_names");
 
                     b.ToTable("Manufacture", (string)null);
@@ -740,13 +740,13 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("deliveryAddress");
+                        .HasColumnName("DeliveryAddress");
 
                     b.Property<string>("DeliveryPhone")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("deliveryPhone");
+                        .HasColumnName("DeliveryPhone");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -757,7 +757,7 @@ namespace SellPhones.Build.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasPrecision(6)
                         .HasColumnType("timestamp(6) with time zone")
-                        .HasColumnName("orderDate");
+                        .HasColumnName("OrderDate");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -767,7 +767,7 @@ namespace SellPhones.Build.Migrations
                     b.Property<Guid?>("UserId")
                         .IsRequired()
                         .HasColumnType("uuid")
-                        .HasColumnName("idUser_id");
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id")
                         .HasName("PK_order_Id");
@@ -790,21 +790,21 @@ namespace SellPhones.Build.Migrations
 
                     b.Property<int>("BrandProductColorId")
                         .HasColumnType("integer")
-                        .HasColumnName("idBrandProductColor_id");
+                        .HasColumnName("BrandProductColorId");
 
                     b.Property<DateTime?>("ChangedTimestamp")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("OderId")
                         .HasColumnType("integer")
-                        .HasColumnName("idOder_id");
+                        .HasColumnName("OderId");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("numeric(10,2)")
-                        .HasColumnName("unit_price");
+                        .HasColumnName("UnitPrice");
 
                     b.HasKey("Id")
                         .HasName("PK_orderdetail_Id");
@@ -845,7 +845,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
-                        .HasColumnName("nameManufacture_id");
+                        .HasColumnName("NameManufactureId");
 
                     b.Property<string>("Type")
                         .HasMaxLength(50)
@@ -873,10 +873,6 @@ namespace SellPhones.Build.Migrations
                     b.Property<DateTime?>("ChangedTimestamp")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("IdProductId")
-                        .HasColumnType("integer")
-                        .HasColumnName("idProduct_id");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
@@ -887,17 +883,21 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("nameColor_id");
+                        .HasColumnName("NameColorId");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric(10,2)");
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer")
+                        .HasColumnName("ProductId");
+
                     b.HasKey("Id")
                         .HasName("PK_product_color_Id");
 
-                    b.HasIndex("IdProductId");
-
                     b.HasIndex("NameColorId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductColor", (string)null);
                 });
@@ -928,12 +928,12 @@ namespace SellPhones.Build.Migrations
                     b.Property<DateTime>("TimeEnd")
                         .HasPrecision(6)
                         .HasColumnType("timestamp(6) with time zone")
-                        .HasColumnName("timeEnd");
+                        .HasColumnName("TimeEnd");
 
                     b.Property<DateTime>("TimeStart")
                         .HasPrecision(6)
                         .HasColumnType("timestamp(6) with time zone")
-                        .HasColumnName("timeStart");
+                        .HasColumnName("TimeStart");
 
                     b.HasKey("Id")
                         .HasName("PK_promotion_Id");
@@ -959,15 +959,15 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("IdProductId")
-                        .HasColumnType("integer")
-                        .HasColumnName("idProduct_id");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer")
+                        .HasColumnName("ProductId");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -977,16 +977,16 @@ namespace SellPhones.Build.Migrations
                     b.HasKey("Id")
                         .HasName("PK_review_Id");
 
-                    b.HasIndex("IdProductId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Review", (string)null);
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Smartphone", b =>
                 {
-                    b.Property<int>("ProductPtrId")
+                    b.Property<int>("Id")
                         .HasColumnType("integer")
-                        .HasColumnName("product_ptr_id");
+                        .HasColumnName("Id");
 
                     b.Property<DateTime?>("AddedTimestamp")
                         .HasColumnType("timestamp with time zone");
@@ -1028,7 +1028,7 @@ namespace SellPhones.Build.Migrations
                         .HasColumnType("character varying(50)")
                         .HasColumnName("ROM");
 
-                    b.HasKey("ProductPtrId")
+                    b.HasKey("Id")
                         .HasName("PK_smartphone_product_ptr_id");
 
                     b.ToTable("Smartphone", (string)null);
@@ -1036,34 +1036,34 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.BranchProductColor", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Branch", "IdBranch")
+                    b.HasOne("CellPhones.Domain.Entity.Branch", "Branch")
                         .WithMany("BranchProductColors")
                         .HasForeignKey("BranchId")
                         .IsRequired()
                         .HasConstraintName("branch_product_color$branch__idBranch_id_edb533ab_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.ProductColor", "IdProductColor")
+                    b.HasOne("CellPhones.Domain.Entity.ProductColor", "ProductColor")
                         .WithMany("BranchProductColors")
                         .HasForeignKey("ProductColorId")
                         .IsRequired()
                         .HasConstraintName("branch_product_color$branch__idProductColor_id_fbdccc0b_fk_cellphone");
 
-                    b.Navigation("IdBranch");
+                    b.Navigation("Branch");
 
-                    b.Navigation("IdProductColor");
+                    b.Navigation("ProductColor");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.BranchPromotionProduct", b =>
                 {
                     b.HasOne("CellPhones.Domain.Entity.BranchProductColor", "BrandProductColor")
                         .WithMany("BranchPromotionProducts")
-                        .HasForeignKey("IdBrandProductColorId")
+                        .HasForeignKey("BrandProductColorId")
                         .IsRequired()
                         .HasConstraintName("branch_promotion_product$branch__idBrandProductColor__95f82815_fk_cellphone");
 
                     b.HasOne("CellPhones.Domain.Entity.Promotion", "Promotion")
                         .WithMany("BranchPromotionProducts")
-                        .HasForeignKey("IdPromotionId")
+                        .HasForeignKey("PromotionId")
                         .IsRequired()
                         .HasConstraintName("branch_promotion_product$branch__idPromotion_id_3456dae1_fk_cellphone");
 
@@ -1074,14 +1074,14 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Comment", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "IdProduct")
+                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
                         .WithMany("Comments")
                         .HasForeignKey("ProductId")
                         .IsRequired()
                         .HasConstraintName("comment$comment_idProduct_id_886d85ab_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.Comment", "IdReplyNavigation")
-                        .WithMany("InverseIdReplyNavigation")
+                    b.HasOne("CellPhones.Domain.Entity.Comment", "ReplyNavigation")
+                        .WithMany("InverseIdReplyNavigations")
                         .HasForeignKey("ReplyId")
                         .HasConstraintName("FK_comment_comment");
 
@@ -1091,22 +1091,22 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasConstraintName("comment$comment_idUser_id_d2fff2a5_fk_user_Id");
 
-                    b.Navigation("IdProduct");
+                    b.Navigation("Product");
 
-                    b.Navigation("IdReplyNavigation");
+                    b.Navigation("ReplyNavigation");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Earphone", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "ProductPtr")
+                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
                         .WithOne("Earphone")
-                        .HasForeignKey("CellPhones.Domain.Entity.Earphone", "ProductPtrId")
+                        .HasForeignKey("CellPhones.Domain.Entity.Earphone", "Id")
                         .IsRequired()
                         .HasConstraintName("earphone$earphon_product_ptr_id_af17d76e_fk_cellphone");
 
-                    b.Navigation("ProductPtr");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Identity.GroupRole", b =>
@@ -1296,43 +1296,43 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.ProductColor", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "IdProduct")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("IdProductId")
-                        .IsRequired()
-                        .HasConstraintName("product_color$product_idProduct_id_057d2aaf_fk_cellphone");
-
                     b.HasOne("CellPhones.Domain.Entity.Color", "NameColor")
                         .WithMany("ProductColors")
                         .HasForeignKey("NameColorId")
                         .IsRequired()
                         .HasConstraintName("product_color$product_nameColor_id_0ea8764a_fk_cellphone");
 
-                    b.Navigation("IdProduct");
+                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductId")
+                        .IsRequired()
+                        .HasConstraintName("product_color$product_idProduct_id_057d2aaf_fk_cellphone");
 
                     b.Navigation("NameColor");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Review", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "IdProduct")
+                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("IdProductId")
+                        .HasForeignKey("ProductId")
                         .IsRequired()
                         .HasConstraintName("review$review_idProduct_id_4ede3625_fk_cellphone");
 
-                    b.Navigation("IdProduct");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Smartphone", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "ProductPtr")
+                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
                         .WithOne("Smartphone")
-                        .HasForeignKey("CellPhones.Domain.Entity.Smartphone", "ProductPtrId")
+                        .HasForeignKey("CellPhones.Domain.Entity.Smartphone", "Id")
                         .IsRequired()
                         .HasConstraintName("smartphone$smartph_product_ptr_id_a0e68210_fk_cellphone");
 
-                    b.Navigation("ProductPtr");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Branch", b =>
@@ -1354,7 +1354,7 @@ namespace SellPhones.Build.Migrations
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Comment", b =>
                 {
-                    b.Navigation("InverseIdReplyNavigation");
+                    b.Navigation("InverseIdReplyNavigations");
                 });
 
             modelBuilder.Entity("CellPhones.Domain.Entity.Identity.Group", b =>

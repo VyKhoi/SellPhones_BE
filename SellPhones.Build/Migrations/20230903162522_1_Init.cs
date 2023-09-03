@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace SellPhones.Build.Migrations
 {
-    public partial class _1Init : Migration
+    public partial class _1_Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,11 +34,11 @@ namespace SellPhones.Build.Migrations
                 name: "Color",
                 columns: table => new
                 {
-                    names = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
+                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_color_names", x => x.names);
+                    table.PrimaryKey("PK_color_names", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,13 +64,13 @@ namespace SellPhones.Build.Migrations
                 name: "Manufacture",
                 columns: table => new
                 {
-                    names = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_manufacture_names", x => x.names);
+                    table.PrimaryKey("PK_manufacture_names", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -78,8 +79,8 @@ namespace SellPhones.Build.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    timeStart = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
-                    timeEnd = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
+                    TimeStart = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
+                    TimeEnd = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
                     Active = table.Column<short>(type: "smallint", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -148,7 +149,7 @@ namespace SellPhones.Build.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    nameManufacture_id = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    NameManufactureId = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Type = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -160,9 +161,9 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_product_Id", x => x.Id);
                     table.ForeignKey(
                         name: "product$product_nameManufacture_id_473540a7_fk_cellphone",
-                        column: x => x.nameManufacture_id,
+                        column: x => x.NameManufactureId,
                         principalTable: "Manufacture",
-                        principalColumn: "names");
+                        principalColumn: "Name");
                 });
 
             migrationBuilder.CreateTable(
@@ -216,13 +217,13 @@ namespace SellPhones.Build.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    orderDate = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
-                    deliveryAddress = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    deliveryPhone = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "timestamp(6) with time zone", precision: 6, nullable: false),
+                    DeliveryAddress = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    DeliveryPhone = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     Status = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    idUser_id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -231,7 +232,7 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_order_Id", x => x.Id);
                     table.ForeignKey(
                         name: "order$order_idUser_id_bb73099a_fk_user_Id",
-                        column: x => x.idUser_id,
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
@@ -397,12 +398,12 @@ namespace SellPhones.Build.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    contentComment = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    idProduct_id = table.Column<int>(type: "integer", nullable: false),
-                    idUser_id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ContentComment = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
-                    idReply = table.Column<int>(type: "integer", nullable: true),
+                    ReplyId = table.Column<int>(type: "integer", nullable: true),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -411,17 +412,17 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_comment_Id", x => x.Id);
                     table.ForeignKey(
                         name: "comment$comment_idProduct_id_886d85ab_fk_cellphone",
-                        column: x => x.idProduct_id,
+                        column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "comment$comment_idUser_id_d2fff2a5_fk_user_Id",
-                        column: x => x.idUser_id,
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_comment_comment",
-                        column: x => x.idReply,
+                        column: x => x.ReplyId,
                         principalTable: "Comment",
                         principalColumn: "Id");
                 });
@@ -430,19 +431,19 @@ namespace SellPhones.Build.Migrations
                 name: "Earphone",
                 columns: table => new
                 {
-                    product_ptr_id = table.Column<int>(type: "integer", nullable: false),
-                    connectionType = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false),
+                    ConnectionType = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Design = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    Frequency_Response = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    FrequencyResponse = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_earphone_product_ptr_id", x => x.product_ptr_id);
+                    table.PrimaryKey("PK_earphone_product_ptr_id", x => x.Id);
                     table.ForeignKey(
                         name: "earphone$earphon_product_ptr_id_af17d76e_fk_cellphone",
-                        column: x => x.product_ptr_id,
+                        column: x => x.Id,
                         principalTable: "Product",
                         principalColumn: "Id");
                 });
@@ -456,8 +457,8 @@ namespace SellPhones.Build.Migrations
                     Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
-                    linkImg = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    idProduct_id = table.Column<int>(type: "integer", nullable: false),
+                    LinkImg = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -466,7 +467,7 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_imageproduct_Id", x => x.Id);
                     table.ForeignKey(
                         name: "imageproduct$imagepr_idProduct_id_4de16385_fk_cellphone",
-                        column: x => x.idProduct_id,
+                        column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id");
                 });
@@ -475,23 +476,23 @@ namespace SellPhones.Build.Migrations
                 name: "Laptop",
                 columns: table => new
                 {
-                    product_ptr_id = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false),
                     CPU = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     RAM = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ROM = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Graphic_Card = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Battery = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    operatorSystem = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    OperatorSystem = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Others = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_laptop_product_ptr_id", x => x.product_ptr_id);
+                    table.PrimaryKey("PK_laptop_product_ptr_id", x => x.Id);
                     table.ForeignKey(
                         name: "laptop$laptop_product_ptr_id_137bfb4d_fk_cellphone",
-                        column: x => x.product_ptr_id,
+                        column: x => x.Id,
                         principalTable: "Product",
                         principalColumn: "Id");
                 });
@@ -503,10 +504,10 @@ namespace SellPhones.Build.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Price = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
-                    idProduct_id = table.Column<int>(type: "integer", nullable: false),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
-                    nameColor_id = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    NameColorId = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -515,14 +516,14 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_product_color_Id", x => x.Id);
                     table.ForeignKey(
                         name: "product_color$product_idProduct_id_057d2aaf_fk_cellphone",
-                        column: x => x.idProduct_id,
+                        column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "product_color$product_nameColor_id_0ea8764a_fk_cellphone",
-                        column: x => x.nameColor_id,
+                        column: x => x.NameColorId,
                         principalTable: "Color",
-                        principalColumn: "names");
+                        principalColumn: "Name");
                 });
 
             migrationBuilder.CreateTable(
@@ -535,7 +536,7 @@ namespace SellPhones.Build.Migrations
                     Content = table.Column<string>(type: "text", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
-                    idProduct_id = table.Column<int>(type: "integer", nullable: false),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -544,7 +545,7 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_review_Id", x => x.Id);
                     table.ForeignKey(
                         name: "review$review_idProduct_id_4ede3625_fk_cellphone",
-                        column: x => x.idProduct_id,
+                        column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id");
                 });
@@ -553,7 +554,7 @@ namespace SellPhones.Build.Migrations
                 name: "Smartphone",
                 columns: table => new
                 {
-                    product_ptr_id = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false),
                     Operator_System = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     CPU = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     RAM = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
@@ -565,10 +566,10 @@ namespace SellPhones.Build.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_smartphone_product_ptr_id", x => x.product_ptr_id);
+                    table.PrimaryKey("PK_smartphone_product_ptr_id", x => x.Id);
                     table.ForeignKey(
                         name: "smartphone$smartph_product_ptr_id_a0e68210_fk_cellphone",
-                        column: x => x.product_ptr_id,
+                        column: x => x.Id,
                         principalTable: "Product",
                         principalColumn: "Id");
                 });
@@ -580,8 +581,8 @@ namespace SellPhones.Build.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Amount = table.Column<int>(type: "integer", nullable: false),
-                    Branch_id = table.Column<int>(type: "integer", nullable: false),
-                    ProductColor_id = table.Column<int>(type: "integer", nullable: false),
+                    BranchId = table.Column<int>(type: "integer", nullable: false),
+                    ProductColorId = table.Column<int>(type: "integer", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
@@ -592,12 +593,12 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_branch_product_color_Id", x => x.Id);
                     table.ForeignKey(
                         name: "branch_product_color$branch__idBranch_id_edb533ab_fk_cellphone",
-                        column: x => x.Branch_id,
+                        column: x => x.BranchId,
                         principalTable: "Branch",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "branch_product_color$branch__idProductColor_id_fbdccc0b_fk_cellphone",
-                        column: x => x.ProductColor_id,
+                        column: x => x.ProductColorId,
                         principalTable: "ProductColor",
                         principalColumn: "Id");
                 });
@@ -608,9 +609,9 @@ namespace SellPhones.Build.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    discountRate = table.Column<double>(type: "double precision", nullable: false),
-                    idBrandProductColor_id = table.Column<int>(type: "integer", nullable: false),
-                    idPromotion_id = table.Column<int>(type: "integer", nullable: false),
+                    DiscountRate = table.Column<double>(type: "double precision", nullable: false),
+                    BrandProductColorId = table.Column<int>(type: "integer", nullable: false),
+                    PromotionId = table.Column<int>(type: "integer", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
@@ -621,12 +622,12 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_branch_promotion_product_Id", x => x.Id);
                     table.ForeignKey(
                         name: "branch_promotion_product$branch__idBrandProductColor__95f82815_fk_cellphone",
-                        column: x => x.idBrandProductColor_id,
+                        column: x => x.BrandProductColorId,
                         principalTable: "BranchProductColor",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "branch_promotion_product$branch__idPromotion_id_3456dae1_fk_cellphone",
-                        column: x => x.idPromotion_id,
+                        column: x => x.PromotionId,
                         principalTable: "Promotion",
                         principalColumn: "Id");
                 });
@@ -638,9 +639,9 @@ namespace SellPhones.Build.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Quantity = table.Column<int>(type: "integer", nullable: false),
-                    idBrandProductColor_id = table.Column<int>(type: "integer", nullable: false),
-                    idOder_id = table.Column<int>(type: "integer", nullable: false),
-                    unit_price = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
+                    BrandProductColorId = table.Column<int>(type: "integer", nullable: false),
+                    OderId = table.Column<int>(type: "integer", nullable: false),
+                    UnitPrice = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
                     AddedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ChangedTimestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -649,50 +650,50 @@ namespace SellPhones.Build.Migrations
                     table.PrimaryKey("PK_orderdetail_Id", x => x.Id);
                     table.ForeignKey(
                         name: "orderdetail$orderde_idBrandProductColor__980f79ef_fk_cellphone",
-                        column: x => x.idBrandProductColor_id,
+                        column: x => x.BrandProductColorId,
                         principalTable: "BranchProductColor",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "orderdetail$orderde_idOder_id_6730d0c3_fk_cellphone",
-                        column: x => x.idOder_id,
+                        column: x => x.OderId,
                         principalTable: "Order",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BranchProductColor_Branch_id",
+                name: "IX_BranchProductColor_BranchId",
                 table: "BranchProductColor",
-                column: "Branch_id");
+                column: "BranchId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BranchProductColor_ProductColor_id",
+                name: "IX_BranchProductColor_ProductColorId",
                 table: "BranchProductColor",
-                column: "ProductColor_id");
+                column: "ProductColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BranchPromotionProduct_idBrandProductColor_id",
+                name: "IX_BranchPromotionProduct_BrandProductColorId",
                 table: "BranchPromotionProduct",
-                column: "idBrandProductColor_id");
+                column: "BrandProductColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BranchPromotionProduct_idPromotion_id",
+                name: "IX_BranchPromotionProduct_PromotionId",
                 table: "BranchPromotionProduct",
-                column: "idPromotion_id");
+                column: "PromotionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comment_idProduct_id",
+                name: "IX_Comment_ProductId",
                 table: "Comment",
-                column: "idProduct_id");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comment_idReply",
+                name: "IX_Comment_ReplyId",
                 table: "Comment",
-                column: "idReply");
+                column: "ReplyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comment_idUser_id",
+                name: "IX_Comment_UserId",
                 table: "Comment",
-                column: "idUser_id");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GroupRoles_RoleId",
@@ -700,44 +701,44 @@ namespace SellPhones.Build.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ImageProduct_idProduct_id",
+                name: "IX_ImageProduct_ProductId",
                 table: "ImageProduct",
-                column: "idProduct_id");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_idUser_id",
+                name: "IX_Order_UserId",
                 table: "Order",
-                column: "idUser_id");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_idBrandProductColor_id",
+                name: "IX_OrderDetail_BrandProductColorId",
                 table: "OrderDetail",
-                column: "idBrandProductColor_id");
+                column: "BrandProductColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_idOder_id",
+                name: "IX_OrderDetail_OderId",
                 table: "OrderDetail",
-                column: "idOder_id");
+                column: "OderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Product_nameManufacture_id",
+                name: "IX_Product_NameManufactureId",
                 table: "Product",
-                column: "nameManufacture_id");
+                column: "NameManufactureId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductColor_idProduct_id",
+                name: "IX_ProductColor_NameColorId",
                 table: "ProductColor",
-                column: "idProduct_id");
+                column: "NameColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductColor_nameColor_id",
+                name: "IX_ProductColor_ProductId",
                 table: "ProductColor",
-                column: "nameColor_id");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Review_idProduct_id",
+                name: "IX_Review_ProductId",
                 table: "Review",
-                column: "idProduct_id");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RoleClaims_RoleId",

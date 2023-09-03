@@ -10,7 +10,7 @@ namespace CellPhones.Domain.Entity
 
         public decimal Price { get; set; }
 
-        public int IdProductId { get; set; }
+        public int ProductId { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
 
@@ -20,7 +20,7 @@ namespace CellPhones.Domain.Entity
 
         public virtual ICollection<BranchProductColor> BranchProductColors { get; } = new List<BranchProductColor>();
 
-        public virtual Product IdProduct { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
 
         public virtual Color NameColor { get; set; } = null!;
     }

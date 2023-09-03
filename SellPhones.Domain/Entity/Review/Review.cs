@@ -13,10 +13,10 @@ namespace CellPhones.Domain.Entity
         public string Content { get; set; } = null!;
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
-        public int IdProductId { get; set; }
+        public int ProductId { get; set; }
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-        public virtual Product IdProduct { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
     }
 }

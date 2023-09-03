@@ -10,9 +10,9 @@ namespace CellPhones.Domain.Entity
 
         public double DiscountRate { get; set; }
 
-        public int IdBrandProductColorId { get; set; }
+        public int BrandProductColorId { get; set; }
 
-        public int IdPromotionId { get; set; }
+        public int PromotionId { get; set; }
         public DateTime? AddedTimestamp { get; set; }
 
         public DateTime? ChangedTimestamp { get; set; }

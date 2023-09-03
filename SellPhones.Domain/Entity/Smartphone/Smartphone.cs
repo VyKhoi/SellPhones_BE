@@ -6,7 +6,7 @@ namespace CellPhones.Domain.Entity
     [Table("Smartphone")]
     public class Smartphone : IAudit
     {
-        public int ProductPtrId { get; set; }
+        public int Id { get; set; }
 
         public string OperatorSystem { get; set; } = null!;
 
@@ -22,6 +22,6 @@ namespace CellPhones.Domain.Entity
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-        public virtual Product ProductPtr { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
     }
 }

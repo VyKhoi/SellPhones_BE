@@ -23,8 +23,8 @@ namespace CellPhones.Domain.Entity
 
         public virtual ICollection<OrderDetail> OrderDetails { get; } = new List<OrderDetail>();
 
-        public virtual Branch IdBranch { get; set; } = null!;
+        public virtual Branch Branch { get; set; } = null!;
 
-        public virtual ProductColor IdProductColor { get; set; } = null!;
+        public virtual ProductColor ProductColor { get; set; } = null!;
     }
 }
