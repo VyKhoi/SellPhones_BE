@@ -21,3 +21,10 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\refint\SellPhones.Security.dll
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\ref\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CopyComplete

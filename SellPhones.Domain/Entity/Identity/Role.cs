@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
-using static CellPhones.Commons.RoleName;
+using static SellPhones.Commons.RoleName;
 
-namespace CellPhones.Domain.Entity.Identity
+namespace SellPhones.Domain.Entity.Identity
 
 {
     [Table("Roles")]

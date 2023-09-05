@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity.Identity
+namespace SellPhones.Domain.Entity.Identity
 {
     [Table("UserGroups")]
     public class UserGroup

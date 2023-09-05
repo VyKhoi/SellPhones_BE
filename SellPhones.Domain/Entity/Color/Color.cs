@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity
+namespace SellPhones.Domain.Entity
 {
     [Table("Color")]
     public class Color

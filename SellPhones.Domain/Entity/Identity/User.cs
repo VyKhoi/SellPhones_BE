@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace CellPhones.Domain.Entity.Identity
+namespace SellPhones.Domain.Entity.Identity
 {
     public class User : IdentityUser<Guid>, IAudit
     {
@@ -30,5 +30,7 @@ namespace CellPhones.Domain.Entity.Identity
         public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 
         public virtual ICollection<Order> Orders { get; } = new List<Order>();
+        public virtual ICollection<UserGroup> UserGroups { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

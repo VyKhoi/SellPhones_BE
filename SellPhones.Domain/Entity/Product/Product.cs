@@ -1,7 +1,7 @@
-﻿using CellPhones.Domain.Entity.Identity;
+﻿using SellPhones.Domain.Entity.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity
+namespace SellPhones.Domain.Entity
 {
     [Table("Product")]
     public class Product : IAudit

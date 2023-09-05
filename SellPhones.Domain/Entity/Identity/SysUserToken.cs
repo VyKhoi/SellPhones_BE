@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity.Identity
+namespace SellPhones.Domain.Entity.Identity
 {
     [Table("SysUserTokens")]
     public class SysUserToken : IEntity<Guid>

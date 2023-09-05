@@ -1,14 +1,13 @@
-﻿using CellPhones.Domain.Entity;
-using CellPhones.Domain.Entity.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using SellPhones.Data.Interfaces;
 using SellPhones.Data.Repositories;
+using SellPhones.Domain.Entity;
+using SellPhones.Domain.Entity.Identity;
 
 namespace SellPhones.Data.Uow
 {
-    public class UnitOfWork<TContext> : IRepositoryFactory, IUnitOfWork<TContext>, IUnitOfWork
-        where TContext : DbContext, IDisposable
+    public class UnitOfWork<TContext> : IRepositoryFactory, IUnitOfWork<TContext>, IUnitOfWork where TContext : DbContext, IDisposable
     {
         private Dictionary<Type, object> _repositories;
         private IDbContextTransaction transaction;

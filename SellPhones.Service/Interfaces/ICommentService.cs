@@ -1,6 +1,6 @@
 ﻿namespace SellPhones.Service.Interfaces
 {
-    public class ICommentService
+    public interface ICommentService
     {
     }
 }

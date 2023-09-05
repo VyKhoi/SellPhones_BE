@@ -1,6 +1,6 @@
 ﻿namespace SellPhones.Service.Interfaces
 {
-    public class IColorService
+    public interface IColorService
     {
     }
 }

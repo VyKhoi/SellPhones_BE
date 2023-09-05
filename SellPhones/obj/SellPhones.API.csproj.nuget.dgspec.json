@@ -306,6 +306,229 @@
         }
       }
     },
+    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj",
+        "projectName": "SellPhones.DTO",
+        "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj",
+        "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj",
+        "projectName": "SellPhones.Security",
+        "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj",
+        "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj",
+        "projectName": "SellPhones.Service",
+        "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj",
+        "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones\\SellPhones.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -336,6 +559,15 @@
               },
               "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj": {
                 "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Security\\SellPhones.Security.csproj"
+              },
+              "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj": {
+                "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Service\\SellPhones.Service.csproj"
               }
             }
           }
@@ -354,6 +586,10 @@
               "target": "Package",
               "version": "[6.0.21, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -371,6 +607,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

@@ -1,7 +1,7 @@
-﻿using CellPhones.Domain.Entity.Identity;
+﻿using SellPhones.Domain.Entity.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity
+namespace SellPhones.Domain.Entity
 {
     [Table("Manufacture")]
     public class Manufacture : IAudit
@@ -10,6 +10,6 @@ namespace CellPhones.Domain.Entity
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 
-        public virtual ICollection<Product> Products { get; } = new List<Product>();
+        public virtual ICollection<Product> Products { get; }
     }
 }

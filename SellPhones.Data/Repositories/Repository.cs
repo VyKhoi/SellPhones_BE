@@ -1,9 +1,9 @@
-﻿using CellPhones.Domain.Entity.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Query;
 using SellPhones.Data.Interfaces;
+using SellPhones.Domain.Entity.Identity;
 using System.Linq.Expressions;
 using System.Reflection;
 

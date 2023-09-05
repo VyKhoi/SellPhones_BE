@@ -1,4 +1,4 @@
-﻿namespace CellPhones.Domain.Entity.Identity
+﻿namespace SellPhones.Domain.Entity.Identity
 {
     public interface IAudit
     {

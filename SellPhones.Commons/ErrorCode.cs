@@ -1,4 +1,4 @@
-﻿namespace BestEnglish.Commons
+﻿namespace SellPhones.Commons
 {
     public static class ErrorCode
     {

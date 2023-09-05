@@ -155,3 +155,13 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\runtimes\
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.AutoHistory.dll
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.API.xml
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\obj\Debug\net6.0\SellPhones.API.xml
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.Service.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.Service.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.Security.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\SellPhones.DTO.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

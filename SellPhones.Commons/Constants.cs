@@ -22,4 +22,14 @@ namespace SellPhones.Commons
         [Display(Name = "Week")]
         Week = 5,
     }
+
+    public enum TYPE_PRODUCT
+    {
+        [Display(Name = "Phone")]
+        PHONE = 0,
+        [Display(Name = "LapTop")]
+        LAPTOP = 1,
+        [Display(Name = "Earphone")]
+        EARPHONE = 2,
+    }
 }

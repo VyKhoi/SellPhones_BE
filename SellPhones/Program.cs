@@ -1,13 +1,18 @@
 using log4net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using SellPhones.API.Authentication;
 using SellPhones.Data.DI;
 using SellPhones.Data.EF;
+using SellPhones.DTO.Commons;
+using SellPhones.Services.DI;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Xml;
@@ -16,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,6 +31,7 @@ builder.Services.AddDbContext<SellPhonesContext>(option =>
 option.UseLazyLoadingProxies()
 .UseNpgsql(builder.Configuration.GetConnectionString("MyDB"))
 ).AddUnitOfWork<SellPhonesContext>();
+
 
 builder.Services.AddApiVersioning(options =>
 {
@@ -103,6 +109,12 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+//Dependence Injection
+builder.Services.AddServiceCollection();
+SellPhones.Security.Startup.ConfigureAuth(builder.Services, builder.Configuration, builder.Configuration.GetConnectionString("MyDB"));
+//route
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.OperationFilter<AuthResponsesOperationFilter>();
@@ -121,12 +133,29 @@ log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
 
 var app = builder.Build();
 
-//// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-app.UseSwagger();
-app.UseSwaggerUI();
-//}
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseStatusCodePages();
+app.UseStatusCodePages(async (StatusCodeContext context) =>
+{
+    var request = context.HttpContext.Request;
+    var response = context.HttpContext.Response;
+
+    if (response.StatusCode == (int)HttpStatusCode.Unauthorized)
+    {
+        var body = new ResponseData(HttpStatusCode.Unauthorized, true, "Unauthorized");
+        string str = JsonConvert.SerializeObject(body);
+        response.ContentType = "application/json";   //add this line.....
+        await response.WriteAsync(str);
+        return;
+
+    }
+});
 
 app.UseHttpsRedirection();
 

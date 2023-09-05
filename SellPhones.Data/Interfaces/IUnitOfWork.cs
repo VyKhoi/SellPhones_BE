@@ -1,6 +1,6 @@
-﻿using CellPhones.Domain.Entity;
-using CellPhones.Domain.Entity.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using SellPhones.Domain.Entity;
+using SellPhones.Domain.Entity.Identity;
 
 namespace SellPhones.Data.Interfaces
 {

@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
@@ -17,6 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
@@ -27,5 +29,12 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\SellPhones.Build\SellPhones.Build.csproj" />
+		<ProjectReference Include="..\SellPhones.DTO\SellPhones.DTO.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SellPhones.Service\SellPhones.Service.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SellPhones.Security\SellPhones.Security.csproj" />
 	</ItemGroup>
 </Project>

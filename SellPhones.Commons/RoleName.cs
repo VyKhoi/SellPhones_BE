@@ -1,4 +1,4 @@
-﻿namespace CellPhones.Commons
+﻿namespace SellPhones.Commons
 {
     public static class RoleName
     {

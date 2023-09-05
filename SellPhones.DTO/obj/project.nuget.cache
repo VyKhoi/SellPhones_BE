@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "I8vh6E6OdKRU999kLAmvjtgM+BSVJvky5azFUUxKhYaioAPoCF97rkjES2szgc8p0EIixs99HQ37iBEBT6MZlg==",
+  "dgSpecHash": "0yndvmJvR2syCB5LXbyVvd6Ae1Ogq3zpqtNVuV0JGSDmQeJp34TZpWhUd5HNcBBhQ1T/SIysWGRe0CDi2f32ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.DTO\\SellPhones.DTO.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

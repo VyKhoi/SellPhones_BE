@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CellPhones.Domain.Entity.Identity
+namespace SellPhones.Domain.Entity.Identity
 {
     [Table("Groups")]
     public class Group : IEntity<Guid>

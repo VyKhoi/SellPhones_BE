@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SellPhones.Data.Interfaces
+﻿namespace SellPhones.Data.Interfaces
 {
     public interface IRepositoryFactory
     {
