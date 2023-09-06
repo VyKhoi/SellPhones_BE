@@ -26,5 +26,18 @@ namespace SellPhones.API.Controllers
             var rs = await productService.SearchAsync(dto);
             return Ok(rs);
         }
+
+
+        /// <summary>
+        /// Chi tiết sản phẩm
+        /// </summary>
+        /// <param name="id"> BranchProductColor</param>      
+        /// <returns>Chi tiết sản phẩm</returns>
+        [HttpPost("{id}")]
+        public async Task<ActionResult> DetailProduct(int id)
+        {
+            var rs = await productService.DetailProductAsync(id);
+            return Ok(rs);
+        }
     }
 }

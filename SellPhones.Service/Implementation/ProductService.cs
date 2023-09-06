@@ -16,6 +16,8 @@ namespace SellPhones.Service.Implementation
         {
         }
 
+        #region get all product of branch
+
         // get list all product belong type and branch ( no include promotion )
         public async Task<ResponseData> SearchAsync(ProductSearchDto dto)
         {
@@ -180,5 +182,40 @@ namespace SellPhones.Service.Implementation
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
+
+        #endregion get all product of branch
+
+        #region get detail a product of branch
+        // get base detail a product of branch
+        public async Task<ResponseData> DetailProductAsync(int bpcId)
+        {
+            try
+            {
+                // // get detail a product of brach
+                var query = await UnitOfWork.BranchProductColorRepository.FindAsync(bpcId);
+
+                if (query == null)
+                {
+                    return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
+                }
+
+
+                DetailProductDTO rs = new DetailProductDTO();
+                rs.Id = query.Id;
+                rs.Name = query.ProductColor.Product.Name;
+
+                return new ResponseData(rs);
+
+
+            }
+            catch (Exception ex)
+            {
+                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        #endregion
+
     }
 }

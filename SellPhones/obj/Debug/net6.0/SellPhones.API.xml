@@ -10,5 +10,12 @@
             </summary>
             <returns>Danh sách sản phẩm</returns>
         </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.DetailProduct(System.Int32)">
+            <summary>
+            Chi tiết sản phẩm
+            </summary>
+            <param name="id"> BranchProductColor</param>      
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
     </members>
 </doc>
