@@ -21,7 +21,7 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-                switch (dto.TypeProduct)
+                switch (dto.Type)
                 {
                     case TYPE_PRODUCT.SMARTPHONE:
                         {
@@ -35,13 +35,12 @@ namespace SellPhones.Service.Implementation
                         }
                     case TYPE_PRODUCT.EARPHONE:
                         {
-                            return null;
-
-                            break;
+                            var rs = await SearchEarphoneAsync(dto);
+                            return rs;
                         }
                     default:
                         {
-                            break;
+                            return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
                         }
                 }
                 return null;
@@ -53,7 +52,7 @@ namespace SellPhones.Service.Implementation
             }
         }
 
-        // get all smartphone 
+        // get all smartphone
         public async Task<ResponseData> SearchSmartphoneAsync(ProductSearchDto dto)
         {
             try // get all off infor relate of that product ( smartphone )
@@ -61,7 +60,9 @@ namespace SellPhones.Service.Implementation
                 var dataList = new DataList<List<ProductListDto>>();
                 // get all smartphone
                 IEnumerable<Product> query = UnitOfWork.ProductRepository.GetAll().Where(x => x.Type == TYPE_PRODUCT.SMARTPHONE && x.IsActive == true && x.IsDeleted == false)
-                      .Include(x => x.Smartphone);
+                      .Include(x => x.Smartphone)
+                      .Include(x => x.ProductColors).ThenInclude(x => x.BranchProductColors)
+                      .Where(x => x.ProductColors.Any(pc => pc.BranchProductColors.Any(bpc => bpc.BranchId == dto.BranchId))).ToList();
 
                 // fillter data
                 query = query.Filter(dto.FilterOptions, dto.Search);
@@ -102,7 +103,9 @@ namespace SellPhones.Service.Implementation
                 var dataList = new DataList<List<ProductListDto>>();
                 // get all laptop
                 IEnumerable<Product> query = UnitOfWork.ProductRepository.GetAll().Where(x => x.Type == TYPE_PRODUCT.LAPTOP && x.IsActive == true && x.IsDeleted == false)
-                      .Include(x => x.Laptop);
+                       .Include(x => x.Laptop)
+                       .Include(x => x.ProductColors).ThenInclude(x => x.BranchProductColors)
+                       .Where(x => x.ProductColors.Any(pc => pc.BranchProductColors.Any(bpc => bpc.BranchId == dto.BranchId))).ToList();
 
                 // fillter data
                 query = query.Filter(dto.FilterOptions, dto.Search);
@@ -135,6 +138,47 @@ namespace SellPhones.Service.Implementation
             }
         }
 
+        //get all earphone
+        public async Task<ResponseData> SearchEarphoneAsync(ProductSearchDto dto)
+        {
+            try // get all off infor relate of that product ( earphone )
+            {
+                var dataList = new DataList<List<ProductListDto>>();
+                // get all earphone
+                IEnumerable<Product> query = UnitOfWork.ProductRepository.GetAll().Where(x => x.Type == TYPE_PRODUCT.EARPHONE && x.IsActive == true && x.IsDeleted == false)
+               .Include(x => x.Earphone)
+               .Include(x => x.ProductColors).ThenInclude(x => x.BranchProductColors)
+               .Where(x => x.ProductColors.Any(pc => pc.BranchProductColors.Any(bpc => bpc.BranchId == dto.BranchId))).ToList();
 
+                // fillter data
+                query = query.Filter(dto.FilterOptions, dto.Search);
+
+                // sort ( belong to properties of that object )
+                query = query.Sort(dto.SortOptions?.FirstOrDefault());
+
+                // count total record
+                dataList.TotalRecord = query != null ? query.Count() : 0;
+
+                // cut data (use for pagination)
+                var data = query.Skip(dto.PageIndex * dto.PageSize)
+                .Take(dto.PageSize)
+                .Select(x => new ProductListDto()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ManufactureName = x.NameManufactureId,
+                    Type = (TYPE_PRODUCT)x.Type
+                }).ToList();
+
+                dataList.Items = data;
+                //_logger!.LogInfo($"Search Customer Result with data {JsonConvert.SerializeObject(data)}");
+                return new ResponseData(dataList);
+            }
+            catch (Exception ex)
+            {
+                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
     }
 }

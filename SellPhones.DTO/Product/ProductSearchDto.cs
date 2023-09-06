@@ -6,7 +6,7 @@ namespace SellPhones.DTO.Product
 
     public class ProductSearchDto : FilterPagingRequest
     { 
-        public TYPE_PRODUCT TypeProduct { get; set; }
+        public TYPE_PRODUCT Type { get; set; }
         public int BranchId { get; set; }
     }
 }

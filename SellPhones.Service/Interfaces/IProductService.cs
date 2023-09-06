@@ -6,6 +6,11 @@ namespace SellPhones.Service.Interfaces
     public interface IProductService
     {
         Task<ResponseData> SearchAsync(ProductSearchDto search);
+
         Task<ResponseData> SearchSmartphoneAsync(ProductSearchDto dto);
+
+        Task<ResponseData> SearchLaptopAsync(ProductSearchDto dto);
+
+        Task<ResponseData> SearchEarphoneAsync(ProductSearchDto dto);
     }
 }
