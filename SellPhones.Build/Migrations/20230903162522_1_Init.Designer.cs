@@ -1011,7 +1011,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("Operator_System");
+                        .HasColumnName("OperatorSystem");
 
                     b.Property<string>("Others")
                         .IsRequired()

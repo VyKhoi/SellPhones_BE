@@ -270,7 +270,6 @@ namespace SellPhones.Data.EF
                 entity.Property(e => e.NameManufactureId)
                     .HasMaxLength(100)
                     .HasColumnName("NameManufactureId");
-                entity.Property(e => e.Type).HasMaxLength(50);
 
                 entity.HasOne(d => d.NameManufacture).WithMany(p => p.Products)
                     .HasForeignKey(d => d.NameManufactureId)
@@ -345,7 +344,7 @@ namespace SellPhones.Data.EF
                     .HasColumnName("CPU");
                 entity.Property(e => e.OperatorSystem)
                     .HasMaxLength(50)
-                    .HasColumnName("Operator_System");
+                    .HasColumnName("OperatorSystem");
                 entity.Property(e => e.Others).HasMaxLength(50);
                 entity.Property(e => e.Ram)
                     .HasMaxLength(50)

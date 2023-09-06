@@ -28,3 +28,11 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CopyComplete
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.AssemblyReference.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CopyComplete

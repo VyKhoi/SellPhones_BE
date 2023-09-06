@@ -1,4 +1,5 @@
-﻿using SellPhones.Domain.Entity.Identity;
+﻿using SellPhones.Commons;
+using SellPhones.Domain.Entity.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SellPhones.Domain.Entity
@@ -12,7 +13,8 @@ namespace SellPhones.Domain.Entity
 
         public string NameManufactureId { get; set; } = null!;
 
-        public string? Type { get; set; }
+        public TYPE_PRODUCT? Type { get; set; }
+
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
         public bool IsActive { get; set; } = true;
