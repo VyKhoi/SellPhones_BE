@@ -1,5 +1,4 @@
-﻿
-namespace SellPhones.Commons
+﻿namespace SellPhones.Commons
 {
     public abstract class DisposableObject : IDisposable
     {
@@ -16,13 +15,13 @@ namespace SellPhones.Commons
 
             if (isDisposing)
             {
-                if(Disposables != null)
+                if (Disposables != null)
                 {
                     foreach (var disposable in Disposables)
                     {
                         disposable.Dispose();
                     }
-                }             
+                }
             }
 
             Disposables = null;

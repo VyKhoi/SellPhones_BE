@@ -4,5 +4,11 @@
         <name>SellPhones.API</name>
     </assembly>
     <members>
+        <member name="M:SellPhones.API.Controllers.ProductController.SearchProduct(SellPhones.DTO.Product.ProductSearchDto)">
+            <summary>
+            Danh sách sản phẩm
+            </summary>
+            <returns>Danh sách sản phẩm</returns>
+        </member>
     </members>
 </doc>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SellPhones.DTO.Commons
+﻿namespace SellPhones.DTO.Commons
 {
     public abstract class PagedResultBase
     {
@@ -15,6 +13,7 @@ namespace SellPhones.DTO.Commons
             }
             set { PageCount = value; }
         }
+
         public int PageSize { get; set; }
 
         public int RowCount { get; set; }
@@ -26,6 +25,7 @@ namespace SellPhones.DTO.Commons
                 return (CurrentPage - 1) * PageSize + 1;
             }
         }
+
         public int LastRowOnPage
         {
             get

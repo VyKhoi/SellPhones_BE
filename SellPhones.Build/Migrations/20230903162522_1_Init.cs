@@ -554,7 +554,7 @@ namespace SellPhones.Build.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false),
-                    Operator_System = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    OperatorSystem = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     CPU = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     RAM = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ROM = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),

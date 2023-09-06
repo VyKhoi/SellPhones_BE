@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SellPhones.DTO.Commons
+﻿namespace SellPhones.DTO.Commons
 {
     public class GenericResult
     {

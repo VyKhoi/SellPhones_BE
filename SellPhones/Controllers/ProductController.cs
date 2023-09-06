@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SellPhones.DTO.Product;
+using SellPhones.Service.Interfaces;
+
 namespace SellPhones.API.Controllers
 {
     [ApiController]
@@ -7,11 +9,22 @@ namespace SellPhones.API.Controllers
     [ApiVersion("1.0")]
     public class ProductController : BaseController
     {
-        [HttpPost("Search")]
-        public ActionResult SearchProduct([FromBody] ProductSearchDto dto)
+        private IProductService productService;
+
+        public ProductController(IProductService productService)
         {
-          
-            return Ok();
+            this.productService = productService;
+        }
+
+        /// <summary>
+        /// Danh sách sản phẩm
+        /// </summary>
+        /// <returns>Danh sách sản phẩm</returns>
+        [HttpPost("Search")]
+        public async Task<ActionResult> SearchProduct([FromBody] ProductSearchDto dto)
+        {
+            var rs = await productService.SearchAsync(dto);
+            return Ok(rs);
         }
     }
 }

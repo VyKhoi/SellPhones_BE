@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public ColorService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public EarphoneService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

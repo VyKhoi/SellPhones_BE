@@ -34,3 +34,9 @@ C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Service\bin\Debug\net6.0\S
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Service\bin\Debug\net6.0\SellPhones.Domain.dll
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Service\bin\Debug\net6.0\SellPhones.Data.pdb
 C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Service\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.Data.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.Data.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Service\bin\Debug\net6.0\SellPhones.DTO.pdb

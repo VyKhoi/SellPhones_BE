@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SellPhones.DTO.Commons
+﻿namespace SellPhones.DTO.Commons
 {
     public class PagedResult<T> : PagedResultBase where T : class
     {
@@ -8,6 +6,7 @@ namespace SellPhones.DTO.Commons
         {
             Results = new List<T>();
         }
+
         public IList<T> Results { get; set; }
     }
 }

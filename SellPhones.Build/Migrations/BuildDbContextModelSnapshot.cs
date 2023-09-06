@@ -22,7 +22,7 @@ namespace SellPhones.Build.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Branch", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Branch", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Branch", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.BranchProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.BranchProductColor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -107,7 +107,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("BranchProductColor", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.BranchPromotionProduct", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.BranchPromotionProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -149,7 +149,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("BranchPromotionProduct", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Color", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Color", b =>
                 {
                     b.Property<string>("Name")
                         .HasMaxLength(50)
@@ -162,7 +162,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Color", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Comment", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -213,7 +213,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Comment", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Earphone", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Earphone", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("integer")
@@ -248,7 +248,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Earphone", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.Group", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.Group", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -286,7 +286,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.GroupRole", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.GroupRole", b =>
                 {
                     b.Property<Guid>("GroupId")
                         .HasColumnType("uuid")
@@ -303,7 +303,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("GroupRoles", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.Role", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.Role", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -333,7 +333,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Roles", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.RoleClaim", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.RoleClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -357,7 +357,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("RoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.User", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -452,7 +452,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserClaim", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -476,7 +476,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserGroup", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserGroup", b =>
                 {
                     b.Property<Guid>("GroupId")
                         .HasColumnType("uuid")
@@ -493,7 +493,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserGroups", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserLogin", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserLogin", b =>
                 {
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
@@ -512,7 +512,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserRole", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserRole", b =>
                 {
                     b.Property<Guid>("RoleId")
                         .HasColumnType("uuid");
@@ -537,7 +537,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserToken", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserToken", b =>
                 {
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
@@ -576,7 +576,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserVerification", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserVerification", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -602,7 +602,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("UserVerifications");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.ImageProduct", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.ImageProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -645,7 +645,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("ImageProduct", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Laptop", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Laptop", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("integer")
@@ -703,7 +703,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Laptop", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Manufacture", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Manufacture", b =>
                 {
                     b.Property<string>("Name")
                         .HasMaxLength(100)
@@ -722,7 +722,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Manufacture", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Order", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -777,7 +777,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Order", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.OrderDetail", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.OrderDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -816,7 +816,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("OrderDetail", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Product", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -847,9 +847,8 @@ namespace SellPhones.Build.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("NameManufactureId");
 
-                    b.Property<string>("Type")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                    b.Property<int?>("Type")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id")
                         .HasName("PK_product_Id");
@@ -859,7 +858,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Product", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.ProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.ProductColor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -902,7 +901,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("ProductColor", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Promotion", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Promotion", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -941,7 +940,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Promotion", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Review", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Review", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -982,7 +981,7 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Review", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Smartphone", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Smartphone", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("integer")
@@ -1034,15 +1033,15 @@ namespace SellPhones.Build.Migrations
                     b.ToTable("Smartphone", (string)null);
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.BranchProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.BranchProductColor", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Branch", "Branch")
+                    b.HasOne("SellPhones.Domain.Entity.Branch", "Branch")
                         .WithMany("BranchProductColors")
                         .HasForeignKey("BranchId")
                         .IsRequired()
                         .HasConstraintName("branch_product_color$branch__idBranch_id_edb533ab_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.ProductColor", "ProductColor")
+                    b.HasOne("SellPhones.Domain.Entity.ProductColor", "ProductColor")
                         .WithMany("BranchProductColors")
                         .HasForeignKey("ProductColorId")
                         .IsRequired()
@@ -1053,15 +1052,15 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("ProductColor");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.BranchPromotionProduct", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.BranchPromotionProduct", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.BranchProductColor", "BrandProductColor")
+                    b.HasOne("SellPhones.Domain.Entity.BranchProductColor", "BrandProductColor")
                         .WithMany("BranchPromotionProducts")
                         .HasForeignKey("BrandProductColorId")
                         .IsRequired()
                         .HasConstraintName("branch_promotion_product$branch__idBrandProductColor__95f82815_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.Promotion", "Promotion")
+                    b.HasOne("SellPhones.Domain.Entity.Promotion", "Promotion")
                         .WithMany("BranchPromotionProducts")
                         .HasForeignKey("PromotionId")
                         .IsRequired()
@@ -1072,20 +1071,20 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Promotion");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Comment", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Comment", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithMany("Comments")
                         .HasForeignKey("ProductId")
                         .IsRequired()
                         .HasConstraintName("comment$comment_idProduct_id_886d85ab_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.Comment", "ReplyNavigation")
+                    b.HasOne("SellPhones.Domain.Entity.Comment", "ReplyNavigation")
                         .WithMany("InverseIdReplyNavigations")
                         .HasForeignKey("ReplyId")
                         .HasConstraintName("FK_comment_comment");
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .IsRequired()
@@ -1098,26 +1097,26 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Earphone", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Earphone", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithOne("Earphone")
-                        .HasForeignKey("CellPhones.Domain.Entity.Earphone", "Id")
+                        .HasForeignKey("SellPhones.Domain.Entity.Earphone", "Id")
                         .IsRequired()
                         .HasConstraintName("earphone$earphon_product_ptr_id_af17d76e_fk_cellphone");
 
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.GroupRole", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.GroupRole", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Group", "Group")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Group", "Group")
                         .WithMany("GroupRoles")
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Role", "Role")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Role", "Role")
                         .WithMany("GroupRoles")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1128,34 +1127,34 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.RoleClaim", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.RoleClaim", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Role", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserClaim", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserClaim", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserGroup", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserGroup", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Group", "Group")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Group", "Group")
                         .WithMany("UserGroups")
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
-                        .WithMany()
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
+                        .WithMany("UserGroups")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1165,37 +1164,37 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserLogin", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserLogin", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserRole", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserRole", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Role", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.Role", "Role")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.Role", "Role")
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
-                        .WithMany()
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
+                        .WithMany("UserRoles")
                         .HasForeignKey("UserId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1205,24 +1204,24 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserToken", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserToken", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", null)
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId1");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.UserVerification", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.UserVerification", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1231,9 +1230,9 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.ImageProduct", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.ImageProduct", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithMany("ImageProducts")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1242,20 +1241,20 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Laptop", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Laptop", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithOne("Laptop")
-                        .HasForeignKey("CellPhones.Domain.Entity.Laptop", "Id")
+                        .HasForeignKey("SellPhones.Domain.Entity.Laptop", "Id")
                         .IsRequired()
                         .HasConstraintName("laptop$laptop_product_ptr_id_137bfb4d_fk_cellphone");
 
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Order", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Order", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Identity.User", "User")
+                    b.HasOne("SellPhones.Domain.Entity.Identity.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .IsRequired()
@@ -1264,15 +1263,15 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.OrderDetail", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.OrderDetail", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.BranchProductColor", "BrandProductColor")
+                    b.HasOne("SellPhones.Domain.Entity.BranchProductColor", "BrandProductColor")
                         .WithMany("OrderDetails")
                         .HasForeignKey("BrandProductColorId")
                         .IsRequired()
                         .HasConstraintName("orderdetail$orderde_idBrandProductColor__980f79ef_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.Order", "Oder")
+                    b.HasOne("SellPhones.Domain.Entity.Order", "Oder")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OderId")
                         .IsRequired()
@@ -1283,9 +1282,9 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Oder");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Product", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Product", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Manufacture", "NameManufacture")
+                    b.HasOne("SellPhones.Domain.Entity.Manufacture", "NameManufacture")
                         .WithMany("Products")
                         .HasForeignKey("NameManufactureId")
                         .IsRequired()
@@ -1294,15 +1293,15 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("NameManufacture");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.ProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.ProductColor", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Color", "NameColor")
+                    b.HasOne("SellPhones.Domain.Entity.Color", "NameColor")
                         .WithMany("ProductColors")
                         .HasForeignKey("NameColorId")
                         .IsRequired()
                         .HasConstraintName("product_color$product_nameColor_id_0ea8764a_fk_cellphone");
 
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithMany("ProductColors")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1313,9 +1312,9 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Review", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Review", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
                         .IsRequired()
@@ -1324,71 +1323,75 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Smartphone", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Smartphone", b =>
                 {
-                    b.HasOne("CellPhones.Domain.Entity.Product", "Product")
+                    b.HasOne("SellPhones.Domain.Entity.Product", "Product")
                         .WithOne("Smartphone")
-                        .HasForeignKey("CellPhones.Domain.Entity.Smartphone", "Id")
+                        .HasForeignKey("SellPhones.Domain.Entity.Smartphone", "Id")
                         .IsRequired()
                         .HasConstraintName("smartphone$smartph_product_ptr_id_a0e68210_fk_cellphone");
 
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Branch", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Branch", b =>
                 {
                     b.Navigation("BranchProductColors");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.BranchProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.BranchProductColor", b =>
                 {
                     b.Navigation("BranchPromotionProducts");
 
                     b.Navigation("OrderDetails");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Color", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Color", b =>
                 {
                     b.Navigation("ProductColors");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Comment", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Comment", b =>
                 {
                     b.Navigation("InverseIdReplyNavigations");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.Group", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.Group", b =>
                 {
                     b.Navigation("GroupRoles");
 
                     b.Navigation("UserGroups");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.Role", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.Role", b =>
                 {
                     b.Navigation("GroupRoles");
 
                     b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Identity.User", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Identity.User", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("Orders");
+
+                    b.Navigation("UserGroups");
+
+                    b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Manufacture", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Manufacture", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Order", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Order", b =>
                 {
                     b.Navigation("OrderDetails");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Product", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Product", b =>
                 {
                     b.Navigation("Comments");
 
@@ -1405,12 +1408,12 @@ namespace SellPhones.Build.Migrations
                     b.Navigation("Smartphone");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.ProductColor", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.ProductColor", b =>
                 {
                     b.Navigation("BranchProductColors");
                 });
 
-            modelBuilder.Entity("CellPhones.Domain.Entity.Promotion", b =>
+            modelBuilder.Entity("SellPhones.Domain.Entity.Promotion", b =>
                 {
                     b.Navigation("BranchPromotionProducts");
                 });
