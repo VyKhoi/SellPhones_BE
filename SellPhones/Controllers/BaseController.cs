@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using SellPhones.Domain.Entity.Identity;
 
 namespace SellPhones.API.Controllers
 {

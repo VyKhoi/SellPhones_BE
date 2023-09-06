@@ -27,8 +27,10 @@ namespace SellPhones.Commons
     {
         [Display(Name = "Phone")]
         PHONE = 0,
+
         [Display(Name = "LapTop")]
         LAPTOP = 1,
+
         [Display(Name = "Earphone")]
         EARPHONE = 2,
     }

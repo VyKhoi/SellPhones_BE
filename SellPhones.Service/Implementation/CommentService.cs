@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public CommentService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

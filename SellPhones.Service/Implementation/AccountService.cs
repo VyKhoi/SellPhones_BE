@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public AccountService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

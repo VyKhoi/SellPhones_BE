@@ -1,7 +1,7 @@
-﻿using System.Reflection;
+﻿using SellPhones.DTO.Commons;
 using System.ComponentModel.DataAnnotations;
-using SellPhones.DTO.Commons;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 
 namespace SellPhones.Services.Extensions
@@ -111,14 +111,14 @@ namespace SellPhones.Services.Extensions
                         }
                     }
 
-                  list = list.Where(x => listPro.Any(y => CheckValue(y, x, search)));
+                    list = list.Where(x => listPro.Any(y => CheckValue(y, x, search)));
                 }
             }
 
             return list;
         }
 
-        static void GetObj(PropertySearchInfo obj, PropertyInfo typeInfo, string[] arr, int i)
+        private static void GetObj(PropertySearchInfo obj, PropertyInfo typeInfo, string[] arr, int i)
         {
             if (arr.Length >= i + 1)
             {
@@ -129,16 +129,16 @@ namespace SellPhones.Services.Extensions
             }
         }
 
-        static bool CheckValue(PropertySearchInfo x, object obj, string search)
+        private static bool CheckValue(PropertySearchInfo x, object obj, string search)
         {
             if (x.PropertyInfo == null || obj == null) return false;
 
-            var flag = x.PropertyInfo.GetValue(obj, null) != null ? true : false;          
+            var flag = x.PropertyInfo.GetValue(obj, null) != null ? true : false;
             if (flag)
-            {         
+            {
                 var value = x.PropertyInfo.GetValue(obj, null);
                 var check = value.ToString().ToLower().Contains(search);
-                
+
                 if (x.Child != null && value != null)
                     return CheckValue(x.Child, value, search);
                 else
@@ -155,7 +155,7 @@ namespace SellPhones.Services.Extensions
                     }
                 }
 
-                return value.ToString().ToLower().Contains(search);         
+                return value.ToString().ToLower().Contains(search);
             }
 
             return false;

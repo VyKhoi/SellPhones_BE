@@ -5,7 +5,6 @@ namespace SellPhones.Service.Implementation
 {
     public class PromotionService : BaseService, IPromotionService
     {
-
         public PromotionService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
         }

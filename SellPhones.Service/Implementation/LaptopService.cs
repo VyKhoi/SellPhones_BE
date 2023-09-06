@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public LaptopService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

@@ -32,7 +32,6 @@ option.UseLazyLoadingProxies()
 .UseNpgsql(builder.Configuration.GetConnectionString("MyDB"))
 ).AddUnitOfWork<SellPhonesContext>();
 
-
 builder.Services.AddApiVersioning(options =>
 {
     options.ReportApiVersions = true;
@@ -153,7 +152,6 @@ app.UseStatusCodePages(async (StatusCodeContext context) =>
         response.ContentType = "application/json";   //add this line.....
         await response.WriteAsync(str);
         return;
-
     }
 });
 

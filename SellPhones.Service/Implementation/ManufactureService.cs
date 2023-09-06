@@ -1,7 +1,7 @@
 ﻿using SellPhones.Data.Interfaces;
-using SellPhones.Service.Interfaces;
-using SellPhones.DTO.Commons;
 using SellPhones.Domain.Entity;
+using SellPhones.DTO.Commons;
+using SellPhones.Service.Interfaces;
 
 namespace SellPhones.Service.Implementation
 {
@@ -10,6 +10,7 @@ namespace SellPhones.Service.Implementation
         public ManufactureService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
         }
+
         //test laasy data
         public ResponseData GetAll()
         {
@@ -20,7 +21,5 @@ namespace SellPhones.Service.Implementation
             }).ToList();
             return new ResponseData(ls);
         }
-
-        
     }
 }

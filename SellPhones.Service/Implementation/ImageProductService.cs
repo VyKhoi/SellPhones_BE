@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public ImageProductService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

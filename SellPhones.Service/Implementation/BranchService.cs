@@ -7,7 +7,6 @@ namespace SellPhones.Service.Implementation
     {
         public BranchService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
         {
-
         }
     }
 }

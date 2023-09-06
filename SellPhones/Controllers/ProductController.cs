@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SellPhones.DTO.Product;
+
 namespace SellPhones.API.Controllers
 {
     [ApiController]
@@ -10,7 +11,6 @@ namespace SellPhones.API.Controllers
         [HttpPost("Search")]
         public ActionResult SearchProduct([FromBody] ProductSearchDto dto)
         {
-          
             return Ok();
         }
     }
