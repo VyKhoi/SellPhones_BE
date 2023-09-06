@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SellPhones.Commons\SellPhones.Commons.csproj" />
+		<ProjectReference Include="..\SellPhones.Data\SellPhones.Data.csproj" />
+		<ProjectReference Include="..\SellPhones.Domain\SellPhones.Domain.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SellPhones.DTO\SellPhones.DTO.csproj" />
+	</ItemGroup>
+</Project>

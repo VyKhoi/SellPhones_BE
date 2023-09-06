@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SellPhones.API</name>
+    </assembly>
+    <members>
+        <member name="M:SellPhones.API.Controllers.ProductController.SearchProduct(SellPhones.DTO.Product.ProductSearchDto)">
+            <summary>
+            Danh sách sản phẩm
+            </summary>
+            <returns>Danh sách sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.DetailProduct(SellPhones.DTO.Product.RequestDetailProductDTO)">
+            <summary>
+            Chi tiết sản phẩm
+            </summary>
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>  
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+    </members>
+</doc>

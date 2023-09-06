@@ -1,0 +1,38 @@
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.deps.json
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.AssemblyInfoInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.AssemblyInfo.cs
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CoreCompileInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\refint\SellPhones.Security.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\ref\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.deps.json
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Security.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.AssemblyReference.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.AssemblyInfoInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.AssemblyInfo.cs
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CoreCompileInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\refint\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\ref\SellPhones.Security.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CopyComplete
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Data.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Domain.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.AssemblyReference.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.Security\obj\Debug\net6.0\SellPhones.Security.csproj.CopyComplete

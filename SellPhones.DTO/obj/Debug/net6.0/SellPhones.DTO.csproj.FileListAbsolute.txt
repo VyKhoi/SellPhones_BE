@@ -1,0 +1,30 @@
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.deps.json
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.AssemblyInfoInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.AssemblyInfo.cs
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.CoreCompileInputs.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\refint\SellPhones.DTO.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\ref\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.deps.json
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.DTO.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.AssemblyReference.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.AssemblyInfoInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.AssemblyInfo.cs
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\refint\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\ref\SellPhones.DTO.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.CopyComplete
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.AssemblyReference.cache
+C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.CopyComplete
