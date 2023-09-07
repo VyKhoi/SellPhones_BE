@@ -201,7 +201,11 @@ namespace SellPhones.Service.Implementation
                 }
 
 
-                DetailProductDTO rs = new DetailProductDTO();
+               List<DetailProductDTO> rs = query.Select(x => new DetailProductDTO() {
+                   Id = dto.Id,
+                   Name = x.ProductColor.Product.Name,
+                   
+               }).ToList();
                 //rs.Id = query.Id;
                 //rs.Name = query.ProductColor.Product.Name;
 
