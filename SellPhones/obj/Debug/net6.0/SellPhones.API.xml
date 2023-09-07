@@ -10,11 +10,12 @@
             </summary>
             <returns>Danh sách sản phẩm</returns>
         </member>
-        <member name="M:SellPhones.API.Controllers.ProductController.DetailProduct(System.Int32)">
+        <member name="M:SellPhones.API.Controllers.ProductController.DetailProduct(SellPhones.DTO.Product.RequestDetailProductDTO)">
             <summary>
             Chi tiết sản phẩm
             </summary>
-            <param name="id"> BranchProductColor</param>      
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>  
             <returns>Chi tiết sản phẩm</returns>
         </member>
     </members>

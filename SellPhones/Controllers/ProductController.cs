@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SellPhones.DTO.Product;
+
 using SellPhones.Service.Interfaces;
+
 
 namespace SellPhones.API.Controllers
 {
@@ -13,6 +15,7 @@ namespace SellPhones.API.Controllers
 
         public ProductController(IProductService productService)
         {
+
             this.productService = productService;
         }
 
@@ -31,13 +34,15 @@ namespace SellPhones.API.Controllers
         /// <summary>
         /// Chi tiết sản phẩm
         /// </summary>
-        /// <param name="id"> BranchProductColor</param>      
+        /// <param name="Id">ProductId</param>   BranchId
+        /// <param name="BranchId">BranchId</param>  
         /// <returns>Chi tiết sản phẩm</returns>
-        [HttpPost("{id}")]
-        public async Task<ActionResult> DetailProduct(int id)
+        [HttpPost("Detail")]
+        public async Task<ActionResult> DetailProduct(RequestDetailProductDTO dto)
         {
-            var rs = await productService.DetailProductAsync(id);
+            var rs = await productService.DetailProductAsync(dto);
             return Ok(rs);
+
         }
     }
 }

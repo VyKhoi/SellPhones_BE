@@ -187,12 +187,13 @@ namespace SellPhones.Service.Implementation
 
         #region get detail a product of branch
         // get base detail a product of branch
-        public async Task<ResponseData> DetailProductAsync(int bpcId)
+        public async Task<ResponseData> DetailProductAsync(RequestDetailProductDTO dto)
         {
             try
             {
-                // // get detail a product of brach
-                var query = await UnitOfWork.BranchProductColorRepository.FindAsync(bpcId);
+                // // get product corlor of that branch
+                var query = UnitOfWork.BranchProductColorRepository.GetAll()
+                    .Where(x => x.ProductColor.Product.Id == dto.Id && x.BranchId == dto.BranchId && x.IsActive == true && x.IsDeleted == false);
 
                 if (query == null)
                 {
@@ -201,8 +202,8 @@ namespace SellPhones.Service.Implementation
 
 
                 DetailProductDTO rs = new DetailProductDTO();
-                rs.Id = query.Id;
-                rs.Name = query.ProductColor.Product.Name;
+                //rs.Id = query.Id;
+                //rs.Name = query.ProductColor.Product.Name;
 
                 return new ResponseData(rs);
 
@@ -214,7 +215,6 @@ namespace SellPhones.Service.Implementation
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
-
         #endregion
 
     }

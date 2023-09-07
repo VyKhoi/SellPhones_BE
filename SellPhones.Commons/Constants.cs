@@ -25,10 +25,12 @@ namespace SellPhones.Commons
 
     public enum TYPE_PRODUCT
     {
+
         [Display(Name = "Smartphone")]
         SMARTPHONE = 0,
 
         [Display(Name = "Laptop")]
+
         LAPTOP = 1,
 
         [Display(Name = "Earphone")]

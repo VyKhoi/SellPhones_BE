@@ -12,6 +12,6 @@ namespace SellPhones.Service.Interfaces
         Task<ResponseData> SearchLaptopAsync(ProductSearchDto dto);
 
         Task<ResponseData> SearchEarphoneAsync(ProductSearchDto dto);
-        Task<ResponseData> DetailProductAsync(int bpcId);
+        Task<ResponseData> DetailProductAsync(RequestDetailProductDTO dto);
     }
 }
