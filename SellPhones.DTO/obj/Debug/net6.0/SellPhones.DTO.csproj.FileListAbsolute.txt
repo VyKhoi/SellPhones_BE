@@ -28,3 +28,5 @@ C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debu
 C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Commons.pdb
 C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.AssemblyReference.cache
 C:\Users\dangv\OneDrive\Desktop\SellPhones\SellPhones_BE\SellPhones.DTO\obj\Debug\net6.0\SellPhones.DTO.csproj.CopyComplete
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Domain.dll
+C:\Users\Vy Khoi\Desktop\SellPhonesProject\SellPhones.DTO\bin\Debug\net6.0\SellPhones.Domain.pdb

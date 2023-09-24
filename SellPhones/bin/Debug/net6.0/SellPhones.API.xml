@@ -4,6 +4,16 @@
         <name>SellPhones.API</name>
     </assembly>
     <members>
+        <member name="M:SellPhones.API.Controllers.AuthController.Login(SellPhones.DTO.Auth.LoginDto)">
+            <summary>
+            Đăng nhập cho khách hàng bình thường
+            </summary>
+        </member>
+        <member name="M:SellPhones.API.Controllers.AuthController.CreateLearner(SellPhones.DTO.User.UserCreateAccountDto)">
+            <summary>
+            Tạo tài khoản học viên
+            </summary>
+        </member>
         <member name="M:SellPhones.API.Controllers.ProductController.SearchProduct(SellPhones.DTO.Product.ProductSearchDto)">
             <summary>
             Danh sách sản phẩm

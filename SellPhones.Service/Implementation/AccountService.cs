@@ -1,6 +1,6 @@
 ﻿using FirebaseAdmin.Auth;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using SellPhones.Commons;
@@ -11,6 +11,7 @@ using SellPhones.DTO.Commons;
 using SellPhones.DTO.Role;
 using SellPhones.DTO.User;
 using SellPhones.Service.Interfaces;
+using System.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
@@ -20,14 +21,18 @@ namespace SellPhones.Service.Implementation
 {
     public class AccountService : BaseService, IAccountService
     {
-        public AccountService(IUnitOfWork UnitOfWork) : base(UnitOfWork)
+        //public IConfiguration Configuration { get; set; }
+        public AccountService(IUnitOfWork UnitOfWork, SignInManager<User> signInManager, UserManager<User> userManager, IConfiguration configuration) : base(UnitOfWork, configuration)
         {
+            _signInManager = signInManager;
+            _userManager = userManager;
+            //Configuration = configuration;
         }
 
         //get token
         private string GetToken(List<Claim> authClaims)
         {
-            _logger.LogInfo($"[AuthService] -> GetToken -> Generate token");
+            //_logger.LogInfo($"[AuthService] -> GetToken -> Generate token");
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration!["JWT:Secret"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
@@ -37,7 +42,7 @@ namespace SellPhones.Service.Implementation
                 claims: authClaims,
                 signingCredentials: credentials);
 
-            _logger.LogInfo($"[AuthService] -> GetToken -> Generate token successfully");
+            //_logger.LogInfo($"[AuthService] -> GetToken -> Generate token successfully");
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
@@ -67,14 +72,14 @@ namespace SellPhones.Service.Implementation
         }
 
         // create account
-        public async Task<ResponseData> CreateLearnerAsync(UserCreateAccountDto dto)
+        public async Task<ResponseData> CreateCustomerAsync(UserCreateAccountDto dto)
         {
             try
             {
-                _logger.LogDebug($"[LearnerService] -> CreateLearnerAsync -> Create with Email {dto.Email}");
+          
                 if (UnitOfWork.UserRepository.GetAll().Any(x => x.UserName.ToLower() == dto.Email.ToLower() || x.Email == dto.Email))
                 {
-                    _logger.LogDebug($"[LearnerService] -> CreateLearnerAsync -> User with email: {dto.Email} already exists");
+                   
                     return new ResponseData(HttpStatusCode.Conflict, false, Commons.ErrorCode.USER_EXISTED);
                 };
                 User user = new User
@@ -90,65 +95,56 @@ namespace SellPhones.Service.Implementation
                     SecurityStamp = Guid.NewGuid().ToString("D"),
                     ConcurrencyStamp = Guid.NewGuid().ToString(),
                     EmailConfirmed = true,
-                  
-                    //IntroduceEmail = dto.IntroduceEmail,
-                    //DayReception = dto.DayReception,
-                    //InvoiceCode = dto.InvoiceCode,
-                    //Describe = dto.Describe,
+                    FirebaseTokenWeb = null,
 
                 };
 
                 user.PasswordHash = new PasswordHasher<User>().HashPassword(user, dto.PassWord);
 
-          
                 UnitOfWork.UserRepository.Add(user);
 
                 await UnitOfWork.SaveChangesAsync();
-                _logger.LogDebug($"[LearnerService] -> CreateLearnerAsync -> Create with userName = {dto.Email} successfully");
+              
 
                 return new ResponseData(new { Id = user.Id }); ;
             }
             catch (Exception ex)
             {
-                _logger.LogError($"[LearnerService] -> CreateLearnerAsync -> Create with Data: {JsonConvert.SerializeObject(dto)} failed, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, Commons.ErrorCode.INSERT_FAIL, dto);
             }
         }
 
-
         // login acount normal
-        public async Task<ResponseData> LoginAsync(LoginBodyDto login, bool isMobile)
+        public async Task<ResponseData> LoginAsync(LoginBodyDto login)
         {
-            _logger.LogInfo($"[AuthService] -> LoginAsync -> Login with UserName: {login.UserName}");
             var query = UnitOfWork.UserRepository.GetAll();
-        
-            var user = query.FirstOrDefault(x => x.Email.ToLower() == login.UserName.ToLower()&& x.IsActive && !x.IsDeleted);
+
+            var user = query.FirstOrDefault(x => x.Email.ToLower() == login.UserName.ToLower() && x.IsActive && !x.IsDeleted);
             if (user == null)
             {
-                _logger.LogError($"[AuthService] -> LoginAsync -> Not found user with email: {login.UserName}");
                 return new ResponseData(HttpStatusCode.NotFound, true, ErrorCode.LOGIN_ERROR);
             }
 
             if (user.LockoutEnabled && user.LockoutEnd.HasValue && user.LockoutEnd.Value.CompareTo(DateTime.UtcNow) > 0)
             {
-                _logger.LogError($"[AuthService] -> LoginAsync -> Email {login.UserName} is dupplicated");
                 return new ResponseData(HttpStatusCode.Conflict, true, ErrorCode.LOGIN_ERROR);
             }
 
             var identityResult = await _signInManager.CheckPasswordSignInAsync(user, login.Password, false);
+
             if (identityResult.Succeeded)
             {
-                var userRoles = await _userManager.GetRolesAsync(user);
+                //var userRoles = await _userManager.GetRolesAsync(user);
 
                 var authClaims = new List<Claim>
                 {   new Claim(ClaimTypes.NameIdentifier,user.UserName),
                     new Claim(ClaimTypes.Name,user.Id.ToString()),
                 };
 
-                foreach (var userRole in userRoles)
-                {
-                    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
-                }
+                //foreach (var userRole in userRoles)
+                //{
+                //    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                //}
 
                 var usrRoles = (from role in UnitOfWork.RoleRepository.GetAll()
                                 join usrl in UnitOfWork.UserRoleRepository.GetAll() on role.Id equals usrl.RoleId
@@ -173,9 +169,7 @@ namespace SellPhones.Service.Implementation
                 //add firebase token
                 if (!string.IsNullOrEmpty(login.FirebaseTokenWeb))
                 {
-                   
                     user.FirebaseTokenWeb = login.FirebaseTokenWeb;
-                   
 
                     UnitOfWork.UserRepository.Update(user);
 
@@ -193,21 +187,17 @@ namespace SellPhones.Service.Implementation
                     Token = token,
                     ExpiredAt = DateTime.UtcNow.AddHours(24),
                 };
-                _logger.LogInfo($"[AuthService] -> LoginAsync -> Logged in successfully");
                 return new ResponseData(data);
             }
 
-            _logger.LogInfo($"[AuthService] -> LoginAsync -> Logged in fail");
             return new ResponseData(HttpStatusCode.Conflict, true, ErrorCode.LOGIN_ERROR);
         }
-
 
         // login with google
         public async Task<ResponseData> LoginWithSocialAsync(LoginWithSocialDto model)
         {
             try
             {
-                _logger.LogError($"[AuthService] -> LoginWithGoole -> Login with UId {model.Uid}");
                 var firebase = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(model.AccesssToken);
                 var emailExists = firebase.Claims.ContainsKey("email");
                 string Uid = "", email = "";
@@ -222,17 +212,15 @@ namespace SellPhones.Service.Implementation
                     email = model.Email != null ? model.Email : "";
                 }
 
-                if (model.TypeLogin == TYPE_LOGIN.Google )
+                if (model.TypeLogin == TYPE_LOGIN.Google)
                 {
                     Uid = firebase.Uid;
                 }
                 if (string.IsNullOrWhiteSpace(model.FirebaseToken))
                 {
-                    _logger.LogInfo($"[AuthService] -> LoginWithGoole -> NotFound FirebaseToken");
                 }
                 if (firebase == null || firebase.Uid != model.Uid)
                 {
-                    _logger.LogInfo($"[AuthService] -> LoginWithGoole -> Invalid token");
                     return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_TOKEN);
                 }
 
@@ -257,7 +245,6 @@ namespace SellPhones.Service.Implementation
 
                 if (accountDeleted != null) // acount đã delete.
                 {
-                    _logger.LogInfo($"[AuthService] -> LoginWithGoogleFlutter -> Account with socialId: {accountDeleted.SocialId} is deleted before -> Please choose another account email");
                     return new ResponseData(HttpStatusCode.NotAcceptable, false, ErrorCode.CHOOSE_ANOTHER_ACCOUNT_GOOGLE);
                 }
                 else
@@ -277,31 +264,22 @@ namespace SellPhones.Service.Implementation
                         else
                         {
                             //newUser.Email = Uid;
-                            _logger.LogError($"[AuthService] -> LoginWithGoole with UId {model.Uid} failed because Email Is Null Or Empty");
                             return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_EMAIL);
                         }
 
                         newUser.PasswordHash = new PasswordHasher<User>().HashPassword(newUser, firebase.Uid);
-                        _logger.LogInfo($"[AuthService] -> LoginWithGoole -> PasswordHash: {newUser.PasswordHash}");
 
-                     
                         UnitOfWork.UserRepository.Add(newUser);
                         UnitOfWork.SaveChanges();
 
                         var data = await GenerateResponse(newUser);
-                        _logger.LogInfo($"[AuthService] -> LoginWithGoole -> Login with UId {model.Uid} successfully");
                         return new ResponseData(data);
-
-           
                     }
                     else
                     {
                         // update lại firebase token mới
-                        _logger.LogInfo($"[AuthService] -> LoginWithGoole -> Check FirebaseToken has a difference");
                         if (user.FirebaseTokenWeb != model.FirebaseToken)
                         {
-                            _logger.LogInfo($"[AuthService] -> LoginWithGoole -> oldFirebaseToken {user.FirebaseTokenWeb}");
-                            _logger.LogInfo($"[AuthService] -> LoginWithGoole -> newFirebaseToken {model.FirebaseToken}");
 
                             if (user.Email.ToLower() != email.ToLower())
                             {
@@ -311,24 +289,19 @@ namespace SellPhones.Service.Implementation
                                 user.Email = email;
                             }
                             user.FirebaseTokenWeb = model.FirebaseToken;
-                          
+
                             UnitOfWork.UserRepository.Update(user);
-                            _logger.LogInfo($"[AuthService] -> LoginWithGoole -> update new firebaseToken success");
                             await UnitOfWork.SaveChangesAsync();
                         }
                         var data = await GenerateResponse(user);
-                        _logger.LogInfo($"[AuthService] -> LoginWithGoole -> Login with UId {model.Uid} successfully");
                         return new ResponseData(data);
                     }
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError($"[AuthService] -> LoginWithGoole with UId {model.Uid} failed, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_TOKEN);
             }
         }
-
-
     }
 }

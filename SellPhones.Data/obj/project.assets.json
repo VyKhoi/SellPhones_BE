@@ -1362,19 +1362,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dangv\\.nuget\\packages\\": {}
+    "C:\\Users\\Vy Khoi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj",
       "projectName": "SellPhones.Data",
-      "projectPath": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
-      "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Data\\obj\\",
+      "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\SellPhones.Data.csproj",
+      "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dangv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1388,8 +1388,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-              "projectPath": "C:\\Users\\dangv\\OneDrive\\Desktop\\SellPhones\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+            "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+              "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj"
             }
           }
         }
@@ -1441,7 +1441,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
