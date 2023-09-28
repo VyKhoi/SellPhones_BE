@@ -13,5 +13,8 @@ namespace SellPhones.Service.Interfaces
 
         Task<ResponseData> SearchEarphoneAsync(ProductSearchDto dto);
         Task<ResponseData> DetailProductAsync(RequestDetailProductDTO dto);
+
+
+        Task<ResponseData> SearchProductPromotionAsync(ProductSearchDto dto);
     }
 }

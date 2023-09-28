@@ -30,6 +30,17 @@ namespace SellPhones.API.Controllers
             return Ok(rs);
         }
 
+        /// <summary>
+        /// Danh sách sản phẩm khuyến mãi
+        /// </summary>
+    
+        [HttpPost("Search/promotion")]
+        public async Task<ActionResult> SearchPromotionProduct([FromBody] ProductSearchDto dto)
+        {
+            var rs = await productService.SearchProductPromotionAsync(dto);
+            return Ok(rs);
+        }
+
 
         /// <summary>
         /// Chi tiết sản phẩm

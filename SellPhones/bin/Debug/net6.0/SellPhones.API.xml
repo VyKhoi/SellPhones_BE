@@ -14,11 +14,31 @@
             Tạo tài khoản học viên
             </summary>
         </member>
+        <member name="M:SellPhones.API.Controllers.CommentController.GellAll(System.Int32)">
+            <summary>
+            get all comment of a product
+            </summary>
+        </member>
+        <member name="M:SellPhones.API.Controllers.CommentController.AddAsync(SellPhones.DTO.Comment.CommentDTO)">
+            <summary>
+            add a comment for a product
+            </summary>
+        </member>
+        <member name="M:SellPhones.API.Controllers.CommentController.DeleteAsync(System.Int32)">
+            <summary>
+            delete a comment 
+            </summary>
+        </member>
         <member name="M:SellPhones.API.Controllers.ProductController.SearchProduct(SellPhones.DTO.Product.ProductSearchDto)">
             <summary>
             Danh sách sản phẩm
             </summary>
             <returns>Danh sách sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.SearchPromotionProduct(SellPhones.DTO.Product.ProductSearchDto)">
+            <summary>
+            Danh sách sản phẩm khuyến mãi
+            </summary>
         </member>
         <member name="M:SellPhones.API.Controllers.ProductController.DetailProduct(SellPhones.DTO.Product.RequestDetailProductDTO)">
             <summary>

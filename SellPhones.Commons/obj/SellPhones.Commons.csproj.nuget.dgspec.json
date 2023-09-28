@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+    "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "projectName": "SellPhones.Commons",
-        "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj",
-        "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
