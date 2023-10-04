@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3XQSfmCDVsHpFAY7VubzJgEsj20wegF4W41wuOXed/VKKteYAY7lZ4m21sS3nXtR/6Xo5CNuZCRwP918KeA0Ag==",
+  "dgSpecHash": "SV+nvL9DGT4P0pOArpToZV3VvNk9NbmiF5ZXPI50AVZS6ldbAzCrh5ILZRDGMwJb18Uw7FTEd9nmlsv9bLFj7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\firebaseadmin\\2.3.0\\firebaseadmin.2.3.0.nupkg.sha512",

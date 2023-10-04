@@ -12,9 +12,16 @@ namespace SellPhones.Service.Interfaces
         Task<ResponseData> SearchLaptopAsync(ProductSearchDto dto);
 
         Task<ResponseData> SearchEarphoneAsync(ProductSearchDto dto);
-        Task<ResponseData> DetailProductAsync(RequestDetailProductDTO dto);
 
+        Task<ResponseData> DetailProductSmartphoneAsync(RequestDetailProductDTO dto);
+
+        Task<ResponseData> DetailProductLaptopAsync(RequestDetailProductDTO dto);
 
         Task<ResponseData> SearchProductPromotionAsync(ProductSearchDto dto);
+
+        Task<ResponseData> SearchProductAsync(ProductSearchDto dto);
+        Task<ResponseData> SearchDetailProductsync(RequestDetailProductDTO dto);
+
+        
     }
 }

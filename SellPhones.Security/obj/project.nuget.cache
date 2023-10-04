@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I2cw/Mv72LXMeymITQZZSXiVJ06WyitR0Wg/wcCDyJddfbYkzAoLInX6ksiYkV8IBHHT/5hqAkpPRJB/yWZuCw==",
+  "dgSpecHash": "VQk/DERo7b2bNXsR/+qde4b6zU1PCbqrdVlvbE84u+s00AwgC26xXb49VYoBHIpvLMWDIJ76rvtQSu+S/UcUtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

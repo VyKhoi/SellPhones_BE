@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "projectName": "SellPhones.Commons",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Commons\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

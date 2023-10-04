@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q4wUdjy5Bc+WF7On0tpFYskoJGZRA/ooX60/KnXAfab9k+UcWWg44ZU1VNEsAtXBsxmzXPayNWhFWCzw/wuVUQ==",
+  "dgSpecHash": "dpWZudToc7HTGcFQszbJI7bif6tQFEDsbR1lgCjm7FA2+SdPm4CXUhmPxf+nvUNL+/QB+UOhC3g55PB0IYIXKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.10\\microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
