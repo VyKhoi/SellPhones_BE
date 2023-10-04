@@ -685,19 +685,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vy Khoi\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
       "projectName": "SellPhones.Domain",
-      "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\SellPhones.Domain.csproj",
-      "packagesPath": "C:\\Users\\Vy Khoi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vy Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -711,8 +711,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj": {
-              "projectPath": "C:\\Users\\Vy Khoi\\Desktop\\SellPhonesProject\\SellPhones.Commons\\SellPhones.Commons.csproj"
+            "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
             }
           }
         }
@@ -748,7 +748,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

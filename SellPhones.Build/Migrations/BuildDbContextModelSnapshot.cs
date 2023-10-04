@@ -389,8 +389,14 @@ namespace SellPhones.Build.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("FirebaseTokenWeb")
+                        .HasColumnType("text");
+
                     b.Property<short?>("Gender")
                         .HasColumnType("smallint");
+
+                    b.Property<Guid?>("GroupId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Hometown")
                         .HasColumnType("text");
@@ -431,6 +437,9 @@ namespace SellPhones.Build.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SocialId")
                         .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -1008,7 +1017,7 @@ namespace SellPhones.Build.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
-                        .HasColumnName("Operator_System");
+                        .HasColumnName("OperatorSystem");
 
                     b.Property<string>("Others")
                         .IsRequired()
