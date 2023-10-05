@@ -621,7 +621,6 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-           
                 IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
                     .Where(p => p.IsActive == true && p.IsDeleted == false)
                     .Include(pm => pm.BranchPromotionProducts)
@@ -633,7 +632,6 @@ namespace SellPhones.Service.Implementation
                     .ThenInclude(bpc => bpc.ProductColor) // get product color
                     .ThenInclude(pc => pc.Product)
                     .ThenInclude(p => p.Smartphone)
-
 
                     .Include(pm => pm.BranchPromotionProducts)
                     .ThenInclude(bpp => bpp.BrandProductColor)
@@ -670,9 +668,9 @@ namespace SellPhones.Service.Implementation
                           tmp.Price = bpp.BrandProductColor.ProductColor.Price;
                           tmp.NameColorId = bpp.BrandProductColor.ProductColor.NameColorId;
                           tmp.ImageLink = bpp.BrandProductColor.ProductColor.Product.ImageProducts.Where(x => x.Name.Trim().Equals(bpp.BrandProductColor.ProductColor.NameColorId.Trim())).FirstOrDefault().LinkImg;
-                          
+
                           tmp.DiscountRate = bpp.DiscountRate;
-                        
+
                           tmp.CPU = bpp.BrandProductColor.ProductColor.Product.Smartphone.OperatorSystem;
                           tmp.RAM = bpp.BrandProductColor.ProductColor.Product.Smartphone.Ram;
                           tmp.ROM = bpp.BrandProductColor.ProductColor.Product.Smartphone.Rom;
@@ -688,9 +686,8 @@ namespace SellPhones.Service.Implementation
                           tmp.Amount = bpp.BrandProductColor?.Amount;
                           tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
 
-
                           // image
-                          foreach(var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
+                          foreach (var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
                           {
                               if (i.ProductId != dto.Id)
                               {
@@ -730,22 +727,15 @@ namespace SellPhones.Service.Implementation
                               dtor.Color = k.BrandProductColor?.ProductColor?.NameColorId;
                               dtor.Price = k.BrandProductColor?.ProductColor?.Price;
                               tmp.Color.Add(dtor);
-
                           }
                           tmp.Color = tmp.Color.DistinctBy(x => x.Color).ToList();
-                              // lấy color
+                          // lấy color
 
-
-                              list.Add(tmp);
+                          list.Add(tmp);
                       }
-
-                     
 
                       return list;
                   });
-
-              
-
 
                 return new ResponseData(dataPromotionProduct);
             }
@@ -760,7 +750,6 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-
                 IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
                     .Where(p => p.IsActive == true && p.IsDeleted == false)
                     .Include(pm => pm.BranchPromotionProducts)
@@ -772,7 +761,6 @@ namespace SellPhones.Service.Implementation
                     .ThenInclude(bpc => bpc.ProductColor) // get product color
                     .ThenInclude(pc => pc.Product)
                     .ThenInclude(p => p.Laptop)
-
 
                     .Include(pm => pm.BranchPromotionProducts)
                     .ThenInclude(bpp => bpp.BrandProductColor)
@@ -829,7 +817,6 @@ namespace SellPhones.Service.Implementation
                           tmp.Amount = bpp.BrandProductColor?.Amount;
                           tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
 
-
                           // image
                           foreach (var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
                           {
@@ -871,22 +858,15 @@ namespace SellPhones.Service.Implementation
                               dtor.Color = k.BrandProductColor?.ProductColor?.NameColorId;
                               dtor.Price = k.BrandProductColor?.ProductColor?.Price;
                               tmp.Color.Add(dtor);
-
                           }
                           tmp.Color = tmp.Color.DistinctBy(x => x.Color).ToList();
                           // lấy color
 
-
                           list.Add(tmp);
                       }
 
-
-
                       return list;
                   });
-
-
-
 
                 return new ResponseData(dataPromotionProduct);
             }
@@ -897,7 +877,7 @@ namespace SellPhones.Service.Implementation
             }
         }
 
-        public async Task<ResponseData> SearchDetailProductsync(RequestDetailProductDTO dto)
+        public async Task<ResponseData> SearchDetailProductAsync(RequestDetailProductDTO dto)
         {
             try
             {
@@ -914,7 +894,7 @@ namespace SellPhones.Service.Implementation
                             var rs = await DetailProductLaptopAsync(dto);
                             return rs;
                         }
-                   
+
                     default:
                         {
                             return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
@@ -928,7 +908,6 @@ namespace SellPhones.Service.Implementation
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
-
 
         #endregion get detail a product of branch
 
@@ -1073,5 +1052,151 @@ namespace SellPhones.Service.Implementation
         }
 
         #endregion search key product
+
+        #region search price
+
+        public async Task<ResponseData> SearchProductFromToPriceAsync(ProductSearchDto dto)
+        {
+            try
+            {
+                // get all of product promotion curent
+                IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
+                    .Where(p => p.IsActive == true && p.IsDeleted == false)
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+
+                    .ThenInclude(bpc => bpc.Branch)// get branch
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+                    .ThenInclude(pro => pro.ImageProducts) // get image
+
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+                    .ThenInclude(pro => pro.Reviews);             // get Reviews
+
+                // fortmat and select list product promotion curent
+                var dataPromotionProduct = queryPromotionProduct
+                  .Select(x =>
+                  {
+                      List<SearchProductOutputDTO> list = new List<SearchProductOutputDTO>();
+                      foreach (var bpp in x.BranchPromotionProducts)
+                      {
+                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false  )                        
+                          {
+                              continue;
+                          }
+                          SearchProductOutputDTO tmp = new SearchProductOutputDTO();
+
+                          tmp.Id = bpp.BrandProductColor.ProductColor.Product.Id;
+                          tmp.Name = bpp.BrandProductColor.ProductColor.Product.Name;
+                          tmp.ManufactureName = bpp.BrandProductColor.ProductColor.Product.NameManufactureId;
+
+                          tmp.BranchName = bpp.BrandProductColor.Branch.Name;
+
+                          tmp.CurrentPrice = (double)bpp.BrandProductColor.ProductColor.Price - ((double)bpp.BrandProductColor.ProductColor.Price * bpp.DiscountRate);
+                          tmp.Price = (double)bpp.BrandProductColor.ProductColor.Price;
+                          tmp.DiscountRate = bpp.DiscountRate;
+                          tmp.ProductColorId = bpp.BrandProductColor.ProductColor.Id;
+                          tmp.CurrentColor = bpp.BrandProductColor.ProductColor.NameColorId;
+                          tmp.CurrentImage = bpp.BrandProductColor.ProductColor.Product.ImageProducts
+                          .Where(i => i.Name.Equals(bpp.BrandProductColor.ProductColor.NameColorId.ToString()))?.FirstOrDefault()?.LinkImg;
+
+                          tmp.ReviewTitle = bpp.BrandProductColor?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Title;
+                          tmp.Introduce = bpp.BrandProductColor?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Content;
+                          tmp.Amount = bpp.BrandProductColor?.Amount;
+                          tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
+
+                          list.Add(tmp);
+                      }
+
+                      list = list.DistinctBy(x => x.Id).OrderBy(x => x.Id).ToList();
+
+                      return list;
+                  });
+
+                // get all product
+                IEnumerable<BranchProductColor> queryProduct = UnitOfWork.BranchProductColorRepository.GetAll()
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+                   .ThenInclude(x => x.Reviews)
+
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+                   .ThenInclude(x => x.ImageProducts)
+                   .Include(x => x.Branch)
+                   .Where(x => x.IsActive == true && x.IsDeleted == false && x.BranchId == dto.BranchId && (x.ProductColor.Price > dto.PriceFrom && x.ProductColor.Price < dto.PriceTo) == true);
+
+                // fortmat and select list product  (not contain promotion
+                var dataProduct = queryProduct
+                  .Select(x =>
+                  {
+                      SearchProductOutputDTO tmp = new SearchProductOutputDTO();
+
+                      tmp.Id = x.ProductColor.Product.Id;
+                      tmp.Name = x.ProductColor.Product.Name;
+                      tmp.ManufactureName = x.ProductColor.Product.NameManufactureId;
+
+                      tmp.BranchName = x.Branch.Name;
+
+                      tmp.CurrentPrice = (double)x.ProductColor.Price;
+                      tmp.Price = (double)x.ProductColor.Price;
+
+                      tmp.ProductColorId = x.ProductColor.Id;
+                      tmp.CurrentColor = x.ProductColor.NameColorId;
+                      tmp.CurrentImage = x.ProductColor.Product.ImageProducts
+                      .Where(i => i.Name.Equals(x.ProductColor.NameColorId.ToString()))?.FirstOrDefault()?.LinkImg;
+
+                      tmp.ReviewTitle = x?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Title;
+                      tmp.Introduce = x?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Content;
+                      tmp.Amount = x?.Amount;
+                      tmp.BranchProductColorId = x?.Id;
+
+                      return tmp;
+                  }).OrderBy(X => X.Id).DistinctBy(x => x.Id).ToList();
+
+                // get current (first or defaut promotion) // now code just work with one promotion
+                var lenght = dataPromotionProduct.FirstOrDefault();
+
+                for (int i = 0; i < dataProduct.Count(); i++)
+                {
+                    //int j = 0;
+                    for (int j = 0; j < lenght.Count(); j++)
+                    {
+                        var item = lenght[j];
+                        if (dataProduct[i].BranchProductColorId == item.BranchProductColorId)
+                        {
+                            dataProduct[i] = item;
+                            break;
+                        }
+                        //j++
+                    }
+                }
+
+                return new ResponseData(dataProduct);
+            }
+            catch (Exception ex)
+            {
+                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        #endregion search price
+
+
+
+
     }
 }

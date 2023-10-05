@@ -12,6 +12,7 @@ using SellPhones.Data.DI;
 using SellPhones.Data.EF;
 using SellPhones.DTO.Commons;
 using SellPhones.Services.DI;
+using Stripe;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -45,6 +46,8 @@ builder.Services.AddApiVersioning(options =>
 builder.Services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
                                                               .AllowAnyMethod()
                                                                .AllowAnyHeader()));
+
+StripeConfiguration.ApiKey = "sk_test_51Mm6CAJTSCX72rEN0osGovCVaSKimGjDCkJjqJmA4vxPFvOav5pfxsJwuaNsm2GQOObTWTsiyY5zPog6FIrVBSgf00zDD66h8d";
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddMemoryCache();
@@ -126,7 +129,7 @@ builder.Services.AddMvc(config =>
 
 // logger
 XmlDocument log4netConfig = new XmlDocument();
-log4netConfig.Load(File.OpenRead("log4net.config"));
+log4netConfig.Load(System.IO.File.OpenRead("log4net.config"));
 var repo = LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
 log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
 

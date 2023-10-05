@@ -51,6 +51,14 @@ namespace SellPhones.API.Controllers
             return Ok(rs);
         }
 
+        [HttpPost("Search/price")]
+        public async Task<ActionResult> SearchProductPrice([FromBody] ProductSearchDto dto)
+        {
+            var rs = await productService.SearchProductFromToPriceAsync(dto);
+            return Ok(rs);
+        }
+
+
         /// <summary>
         /// Chi tiết sản phẩm
         /// </summary>
@@ -60,7 +68,7 @@ namespace SellPhones.API.Controllers
         [HttpPost("Detail")]
         public async Task<ActionResult> DetailProduct(RequestDetailProductDTO dto)
         {
-            var rs = await productService.SearchDetailProductsync(dto);
+            var rs = await productService.SearchDetailProductAsync(dto);
             return Ok(rs);
 
         }
