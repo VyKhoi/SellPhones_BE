@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SellPhones.DTO.Product
 {
-    public class ProductDTOPaymentStripeDTO
+    public class ProductPaymentStripeDTO
     {
         public int? Id { get; set; }
         public string? Name { get; set; }
@@ -25,7 +25,7 @@ namespace SellPhones.DTO.Product
     public class PaymentStripeDTO
     {
         public decimal? Amount { get; set; }
-        public List<ProductDTOPaymentStripeDTO>? Products { get; set; }
+        public List<ProductPaymentStripeDTO>? Products { get; set; }
         public CustomerPaymentStripeDTO? Customer { get; set; }
 
     }

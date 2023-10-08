@@ -25,7 +25,7 @@ namespace SellPhones.Service.Implementation
         public ResponseData PaymentStripeAsync(PaymentStripeDTO dto)
         {
             decimal amount = (decimal)dto.Amount;
-            List<ProductDTOPaymentStripeDTO> products = dto.Products;
+            List<ProductPaymentStripeDTO> products = dto.Products;
             CustomerPaymentStripeDTO customer = dto.Customer;
 
             var productsPost = new List<object>();

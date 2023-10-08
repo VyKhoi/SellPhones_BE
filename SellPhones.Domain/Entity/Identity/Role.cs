@@ -17,5 +17,7 @@ namespace SellPhones.Domain.Entity.Identity
         public virtual ICollection<GroupRole> GroupRoles { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public RoleBlock RoleBlock { get; set; }
+
+        
     }
 }

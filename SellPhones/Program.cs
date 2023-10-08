@@ -42,10 +42,14 @@ builder.Services.AddApiVersioning(options =>
                                                         new HeaderApiVersionReader("x-api-version"),
                                                         new MediaTypeApiVersionReader("x-api-version"));
 });
-// add cors
-builder.Services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
-                                                              .AllowAnyMethod()
-                                                               .AllowAnyHeader()));
+builder.Services.AddCors(p => p.AddPolicy("MyCors", builder =>
+{
+    builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+}));
+
 
 StripeConfiguration.ApiKey = "sk_test_51Mm6CAJTSCX72rEN0osGovCVaSKimGjDCkJjqJmA4vxPFvOav5pfxsJwuaNsm2GQOObTWTsiyY5zPog6FIrVBSgf00zDD66h8d";
 
@@ -161,7 +165,7 @@ app.UseStatusCodePages(async (StatusCodeContext context) =>
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseCors("MyCors");
 app.MapControllers();
 
 app.Run();

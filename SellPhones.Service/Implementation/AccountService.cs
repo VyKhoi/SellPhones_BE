@@ -84,10 +84,12 @@ namespace SellPhones.Service.Implementation
                 };
                 User user = new User
                 {
+
                     Id = Guid.NewGuid(),
+                    Name = dto.Name,
                     UserName = dto.Email,
                     Email = dto.Email,
-                    Code = $"LN{10000 + UnitOfWork.UserRepository.GetAll().Count()}",
+                    Code = $"C{10000 + UnitOfWork.UserRepository.GetAll().Count()}",
                     IsActive = dto.IsActive,
                     PhoneNumber = dto.PhoneNumber,
                     NormalizedEmail = dto.Email.ToUpper(),
@@ -183,7 +185,7 @@ namespace SellPhones.Service.Implementation
                     RoleName = roleName.ToString(),
                     GroupRoles = groupRoles,
                     UserRoles = usrRoles,
-                    userName = user.Name,
+                    Name = user.Name,
                     Token = token,
                     ExpiredAt = DateTime.UtcNow.AddHours(24),
                 };

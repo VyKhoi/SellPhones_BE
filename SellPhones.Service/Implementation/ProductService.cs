@@ -49,7 +49,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -317,7 +317,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -741,7 +741,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -872,7 +872,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -904,7 +904,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -1046,7 +1046,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -1188,7 +1188,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }

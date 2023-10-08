@@ -48,6 +48,6 @@ namespace SellPhones.DTO.Auth
 
         public List<string>? GroupRoles { get; set; }
         public List<string>? UserRoles { get; set; }
-        public string? userName { get; set; }
+        public string?Name { get; set; }
     }
 }
