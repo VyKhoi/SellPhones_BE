@@ -66,7 +66,7 @@ namespace SellPhones.API.Controllers
         /// <param name="BranchId">BranchId</param>  
         /// <returns>Chi tiết sản phẩm</returns>
         [HttpPost("Detail")]
-        public async Task<ActionResult> DetailProduct(RequestDetailProductDTO dto)
+        public async Task<ActionResult> DetailProduct([FromBody] RequestDetailProductDTO dto)
         {
             var rs = await productService.SearchDetailProductAsync(dto);
             return Ok(rs);

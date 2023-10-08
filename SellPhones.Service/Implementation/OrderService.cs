@@ -20,7 +20,7 @@ namespace SellPhones.Service.Implementation
             Dictionary<int, int> amountEachProduct = dto.AmountEachProduct;
             List<ProductPaymentStripeDTO> products = dto.Products;
             CustomerPaymentStripeDTO customer = dto.Customer;
-            DateTime orderDate = dto.OrderDate;
+            DateTime orderDate = (DateTime)dto.OrderDate;
             Console.WriteLine("Thông tin khách hàng là: " + customer);
             Console.WriteLine("Số lượng: " + amountEachProduct);
             Console.WriteLine("Ngày đặt hàng là: " + orderDate);
