@@ -1090,7 +1090,7 @@ namespace SellPhones.Service.Implementation
                       List<SearchProductOutputDTO> list = new List<SearchProductOutputDTO>();
                       foreach (var bpp in x.BranchPromotionProducts)
                       {
-                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false  )                        
+                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || bpp.BrandProductColor.ProductColor.Product.Type != dto.Type || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false  )                        
                           {
                               continue;
                           }
@@ -1136,7 +1136,7 @@ namespace SellPhones.Service.Implementation
                    .ThenInclude(x => x.Product)
                    .ThenInclude(x => x.ImageProducts)
                    .Include(x => x.Branch)
-                   .Where(x => x.IsActive == true && x.IsDeleted == false && x.BranchId == dto.BranchId && (x.ProductColor.Price > dto.PriceFrom && x.ProductColor.Price < dto.PriceTo) == true);
+                   .Where(x => x.IsActive == true && x.ProductColor.Product.Type == dto.Type && x.IsDeleted == false && x.BranchId == dto.BranchId && (x.ProductColor.Price > dto.PriceFrom && x.ProductColor.Price < dto.PriceTo) == true);
 
                 // fortmat and select list product  (not contain promotion
                 var dataProduct = queryProduct
