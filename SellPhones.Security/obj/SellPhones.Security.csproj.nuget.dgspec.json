@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+    "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "projectName": "SellPhones.Commons",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -59,23 +61,25 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+    "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
         "projectName": "SellPhones.Data",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -83,8 +87,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               }
             }
           }
@@ -140,23 +144,25 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+    "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
         "projectName": "SellPhones.Domain",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -164,8 +170,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
               }
             }
           }
@@ -205,23 +211,25 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
+    "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
         "projectName": "SellPhones.Security",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Security\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -229,11 +237,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+              "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               }
             }
           }

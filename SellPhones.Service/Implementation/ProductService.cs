@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SellPhones.Commons;
 using SellPhones.Data.Interfaces;
 using SellPhones.Domain.Entity;
+using SellPhones.DTO;
 using SellPhones.DTO.Commons;
 using SellPhones.DTO.Product;
 using SellPhones.Service.Interfaces;
@@ -1196,7 +1198,83 @@ namespace SellPhones.Service.Implementation
         #endregion search price
 
 
+        public async Task<ResponseData> OrderLookUp(string deliveryPhone)
+        {
+            try
+            {
+                var od = UnitOfWork.OrderRepository.GetAll().Where(x => x.DeliveryPhone == deliveryPhone.Trim())
+                .Include(x => x.OrderDetails)
+                .ThenInclude(x => x.BrandProductColor)
+                .ThenInclude(x => x.ProductColor)
+                .ThenInclude(x => x.Product).ToList();
 
+
+
+
+            
+            return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public  string GetComment(int productId)
+        {
+            try
+            {
+                var comments = UnitOfWork.CommentRepository.GetAll()
+               .Where(c => c.ProductId == productId)
+               .Include(c => c.InverseIdReplyNavigations) // load các comment phản hồi
+                   .ThenInclude(r => r.User) // load thông tin IdUser của các comment phản hồi
+               .Select(c => new
+               {
+                   Id = c.Id,
+                   userName = c.User.UserName,
+                   contentComment = c.ContentComment,
+                   idUser = c.User.Id,
+                   idProduct = c.ProductId,
+                   commentReply = c.InverseIdReplyNavigations
+                       .Select(r => new
+                       {
+                           Id = r.Id,
+                           userName = r.User.UserName,
+                           contentComment = r.ContentComment,
+                           idUser = r.User.Id,
+                           idProduct = r.ProductId,// lấy thông tin userName của các comment phản hồi
+                       })
+               })
+               .ToList();
+
+
+                string json2 = JsonConvert.SerializeObject(comments);
+                return json2;
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return "";
+            }
+        }
+
+
+        public Comment AddComment(CommentPost comment)
+        {
+            var cm = new Comment()
+            {
+                ContentComment = comment.ContentComment,
+                ProductId = (int)comment.IdProductId,
+                UserId = comment.IdUserId,
+                ReplyId = comment.IdReply
+            };
+
+            UnitOfWork.CommentRepository.Add(cm);
+            UnitOfWork.SaveChanges();
+
+            return cm;
+        }
 
     }
 }

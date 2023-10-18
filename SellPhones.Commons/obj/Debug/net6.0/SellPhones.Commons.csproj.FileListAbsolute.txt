@@ -43,3 +43,14 @@ C:\Users\Admin\Desktop\cellphoneProject\sellphone\SellPhones_BE\SellPhones.Commo
 C:\Users\Admin\Desktop\cellphoneProject\sellphone\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\refint\SellPhones.Commons.dll
 C:\Users\Admin\Desktop\cellphoneProject\sellphone\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.pdb
 C:\Users\Admin\Desktop\cellphoneProject\sellphone\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\ref\SellPhones.Commons.dll
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.deps.json
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\bin\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.AssemblyInfo.cs
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.dll
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\refint\SellPhones.Commons.dll
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\SellPhones.Commons.pdb
+C:\Users\Admin\Desktop\VyKhoi\BE\SellPhones_BE\SellPhones.Commons\obj\Debug\net6.0\ref\SellPhones.Commons.dll

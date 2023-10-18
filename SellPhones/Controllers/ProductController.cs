@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SellPhones.DTO;
 using SellPhones.DTO.Product;
 
 using SellPhones.Service.Interfaces;
@@ -69,6 +70,50 @@ namespace SellPhones.API.Controllers
         public async Task<ActionResult> DetailProduct([FromBody] RequestDetailProductDTO dto)
         {
             var rs = await productService.SearchDetailProductAsync(dto);
+            return Ok(rs);
+
+        }
+
+        /// <summary>
+        /// tra cuu san pham
+        /// </summary>
+        /// <param name="Id">ProductId</param>   BranchId
+        /// <param name="BranchId">BranchId</param>  
+        /// <returns>Chi tiết sản phẩm</returns>
+        [HttpGet("order_lookup/{deliveryPhone}")]
+        public async Task<ActionResult> OrderLookUp( string deliveryPhone)
+        {
+            var rs = await productService.OrderLookUp(deliveryPhone);
+            return Ok(rs);
+
+        }
+
+
+        /// <summary>
+        /// danh sách comment
+        /// </summary>
+        /// <param name="Id">ProductId</param>   BranchId
+        /// <param name="BranchId">BranchId</param>  
+        /// <returns>Chi tiết sản phẩm</returns>
+        [HttpGet("comments/{productId}")]
+        public async Task<ActionResult> GetComments(int productId)
+        {
+            var rs = productService.GetComment(productId);
+            return Ok(rs);
+
+        }
+
+
+        /// <summary>
+        /// danh sách comment
+        /// </summary>
+        /// <param name="Id">ProductId</param>   BranchId
+        /// <param name="BranchId">BranchId</param>  
+        /// <returns>Chi tiết sản phẩm</returns>
+        [HttpPost("comments")]
+        public async Task<ActionResult> AddComment([FromBody] CommentPost comment)
+        {
+            var rs = productService.AddComment(comment);
             return Ok(rs);
 
         }

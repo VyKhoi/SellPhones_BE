@@ -53,5 +53,29 @@
             <param name="BranchId">BranchId</param>  
             <returns>Chi tiết sản phẩm</returns>
         </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.OrderLookUp(System.String)">
+            <summary>
+            tra cuu san pham
+            </summary>
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>  
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.GetComments(System.Int32)">
+            <summary>
+            danh sách comment
+            </summary>
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>  
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.AddComment(SellPhones.DTO.CommentPost)">
+            <summary>
+            danh sách comment
+            </summary>
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>  
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
     </members>
 </doc>

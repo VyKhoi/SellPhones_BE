@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i0eJzPqIsKSsQkatuR9kwI6tiROo7tLBudBULxmalDcgNzJ1RapLa1uiDpQqVSHTDnNz4vnpjA8Hkkx3WYze4Q==",
+  "dgSpecHash": "eF/0qr8CTfE5H/z694mtzXWuZ1OzLr+8n1xveLGErpXchCJ3XtiEqbQTg2zrXA9Q8RDRqIMyyl6fMGQh4OlqsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.10\\microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.10\\microsoft.aspnetcore.cryptography.keyderivation.7.0.10.nupkg.sha512",
