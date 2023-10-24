@@ -20,4 +20,15 @@
         public Guid UserId { get; set; }
         public int ProductId { get; set; }
     }
+
+    public class CommentPostDTO
+    {
+        public string? ContentComment { get; set; } = null!;
+
+        public int? ProductId { get; set; }
+
+        public Guid? UserId { get; set; }
+
+        public int? Reply { get; set; }
+    }
 }

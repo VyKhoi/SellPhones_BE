@@ -1,3 +1,5 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using log4net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
@@ -12,6 +14,7 @@ using SellPhones.Data.DI;
 using SellPhones.Data.EF;
 using SellPhones.DTO.Commons;
 using SellPhones.Services.DI;
+using Stripe;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -41,10 +44,15 @@ builder.Services.AddApiVersioning(options =>
                                                         new HeaderApiVersionReader("x-api-version"),
                                                         new MediaTypeApiVersionReader("x-api-version"));
 });
-// add cors
-builder.Services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
-                                                              .AllowAnyMethod()
-                                                               .AllowAnyHeader()));
+builder.Services.AddCors(p => p.AddPolicy("MyCors", builder =>
+{
+    builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+}));
+
+StripeConfiguration.ApiKey = "sk_test_51Mm6CAJTSCX72rEN0osGovCVaSKimGjDCkJjqJmA4vxPFvOav5pfxsJwuaNsm2GQOObTWTsiyY5zPog6FIrVBSgf00zDD66h8d";
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddMemoryCache();
@@ -106,6 +114,15 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+//Init firebase
+FirebaseApp.Create(new AppOptions()
+{
+
+    Credential = GoogleCredential.FromFile("./firebase.json"),
+
+});
+
 builder.Services.AddAuthorization();
 
 //Dependence Injection
@@ -126,7 +143,7 @@ builder.Services.AddMvc(config =>
 
 // logger
 XmlDocument log4netConfig = new XmlDocument();
-log4netConfig.Load(File.OpenRead("log4net.config"));
+log4netConfig.Load(System.IO.File.OpenRead("log4net.config"));
 var repo = LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
 log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
 
@@ -158,7 +175,7 @@ app.UseStatusCodePages(async (StatusCodeContext context) =>
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseCors("MyCors");
 app.MapControllers();
 
 app.Run();

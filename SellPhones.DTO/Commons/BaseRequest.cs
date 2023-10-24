@@ -1,6 +1,5 @@
 ﻿namespace SellPhones.DTO.Commons
 {
-
     public class FilterPagingRequest
     {
         public string? Search { get; set; }

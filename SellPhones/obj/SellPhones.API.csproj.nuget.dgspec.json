@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj": {}
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
         "projectName": "SellPhones.Build",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
               }
             }
           }
@@ -101,21 +101,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
         "projectName": "SellPhones.Commons",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -156,21 +156,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
         "projectName": "SellPhones.Data",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -184,8 +184,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               }
             }
           }
@@ -237,21 +237,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
         "projectName": "SellPhones.Domain",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -265,8 +265,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
               }
             }
           }
@@ -302,21 +302,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj",
         "projectName": "SellPhones.DTO",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -330,11 +330,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               }
             }
           }
@@ -370,21 +370,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
         "projectName": "SellPhones.Security",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -398,11 +398,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               }
             }
           }
@@ -446,21 +446,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj",
         "projectName": "SellPhones.Service",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -474,17 +474,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Commons\\SellPhones.Commons.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Domain\\SellPhones.Domain.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj"
               }
             }
           }
@@ -511,6 +511,14 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.11.0, )"
+            },
             "log4net": {
               "target": "Package",
               "version": "[2.0.15, )"
@@ -532,21 +540,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj": {
+    "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
         "projectName": "SellPhones.API",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones\\SellPhones.API.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -560,20 +568,20 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.DTO\\SellPhones.DTO.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Security\\SellPhones.Security.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\cellphoneProject\\sellphone\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj"
+              "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Service\\SellPhones.Service.csproj"
               }
             }
           }
@@ -626,6 +634,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[42.7.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -662,7 +674,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -62,6 +62,9 @@ namespace SellPhones.Services.DI
             //---------------------------------Smartphone-------------------------------------------------------
             services.AddScoped<ISmartphoneService, SmartphoneService>();
 
+            //
+            services.AddScoped<IPayment, PaymentService>();
+
             return services;
         }
     }

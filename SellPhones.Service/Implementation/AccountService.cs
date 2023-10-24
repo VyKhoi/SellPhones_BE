@@ -2,20 +2,22 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SellPhones.Commons;
 using SellPhones.Data.Interfaces;
 using SellPhones.Domain.Entity.Identity;
 using SellPhones.DTO.Auth;
 using SellPhones.DTO.Commons;
+using SellPhones.DTO.Customer;
 using SellPhones.DTO.Role;
 using SellPhones.DTO.User;
 using SellPhones.Service.Interfaces;
-using System.Configuration;
+using Stripe;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
+using static SellPhones.Commons.RoleName;
 
 namespace SellPhones.Service.Implementation
 {
@@ -76,18 +78,17 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-          
                 if (UnitOfWork.UserRepository.GetAll().Any(x => x.UserName.ToLower() == dto.Email.ToLower() || x.Email == dto.Email))
                 {
-                   
                     return new ResponseData(HttpStatusCode.Conflict, false, Commons.ErrorCode.USER_EXISTED);
                 };
                 User user = new User
                 {
                     Id = Guid.NewGuid(),
+                    Name = dto.Name,
                     UserName = dto.Email,
                     Email = dto.Email,
-                    Code = $"LN{10000 + UnitOfWork.UserRepository.GetAll().Count()}",
+                    Code = $"C{10000 + UnitOfWork.UserRepository.GetAll().Count()}",
                     IsActive = dto.IsActive,
                     PhoneNumber = dto.PhoneNumber,
                     NormalizedEmail = dto.Email.ToUpper(),
@@ -96,7 +97,6 @@ namespace SellPhones.Service.Implementation
                     ConcurrencyStamp = Guid.NewGuid().ToString(),
                     EmailConfirmed = true,
                     FirebaseTokenWeb = null,
-
                 };
 
                 user.PasswordHash = new PasswordHasher<User>().HashPassword(user, dto.PassWord);
@@ -104,7 +104,6 @@ namespace SellPhones.Service.Implementation
                 UnitOfWork.UserRepository.Add(user);
 
                 await UnitOfWork.SaveChangesAsync();
-              
 
                 return new ResponseData(new { Id = user.Id }); ;
             }
@@ -183,7 +182,7 @@ namespace SellPhones.Service.Implementation
                     RoleName = roleName.ToString(),
                     GroupRoles = groupRoles,
                     UserRoles = usrRoles,
-                    userName = user.Name,
+                    Name = user.Name,
                     Token = token,
                     ExpiredAt = DateTime.UtcNow.AddHours(24),
                 };
@@ -212,17 +211,7 @@ namespace SellPhones.Service.Implementation
                     email = model.Email != null ? model.Email : "";
                 }
 
-                if (model.TypeLogin == TYPE_LOGIN.Google)
-                {
-                    Uid = firebase.Uid;
-                }
-                if (string.IsNullOrWhiteSpace(model.FirebaseToken))
-                {
-                }
-                if (firebase == null || firebase.Uid != model.Uid)
-                {
-                    return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_TOKEN);
-                }
+                Uid = firebase.Uid;
 
                 User accountDeleted = new User();
 
@@ -250,7 +239,7 @@ namespace SellPhones.Service.Implementation
                 else
                 {
                     //check exist database
-                    var user = UnitOfWork.UserRepository.GetAll().Where(x => /*x.SocialId == firebase.Uid && */  x.Email == email).FirstOrDefault();
+                    var user = UnitOfWork.UserRepository.GetAll().Where(x => x.Email == email).FirstOrDefault();
                     if (user == null)
                     {
                         // sử lý tạo mói user ở đâys
@@ -260,10 +249,23 @@ namespace SellPhones.Service.Implementation
                         if (!string.IsNullOrWhiteSpace(email))
                         {
                             newUser.Email = email;
+
+                            newUser.Id = Guid.NewGuid();
+                            newUser.Name = firebase.Claims["name"].ToString();
+                            newUser.UserName = email;
+                            newUser.Email = email;
+                            newUser.Code = $"C{10000 + UnitOfWork.UserRepository.GetAll().Count()}";
+                            newUser.IsActive = true;
+                            
+                            newUser.NormalizedEmail = email.ToUpper();
+                            newUser.NormalizedUserName = email.ToUpper();
+                            newUser.SecurityStamp = Guid.NewGuid().ToString("D");
+                            newUser.ConcurrencyStamp = Guid.NewGuid().ToString();
+                            newUser.EmailConfirmed = true;
+                            newUser.FirebaseTokenWeb = null;
                         }
                         else
                         {
-                            //newUser.Email = Uid;
                             return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_EMAIL);
                         }
 
@@ -272,15 +274,21 @@ namespace SellPhones.Service.Implementation
                         UnitOfWork.UserRepository.Add(newUser);
                         UnitOfWork.SaveChanges();
 
-                        var data = await GenerateResponse(newUser);
+                        var data = new LoginResponseDto
+                        {
+                            UserId = user.Id,
+                            //RoleName = roleName.ToString(),
+                            //GroupRoles = groupRoles,
+                            //UserRoles = usrRoles,
+                            Name = user.Name,
+                            //Token = token,
+                            ExpiredAt = DateTime.UtcNow.AddHours(24),
+                        };
                         return new ResponseData(data);
                     }
                     else
                     {
-                        // update lại firebase token mới
-                        if (user.FirebaseTokenWeb != model.FirebaseToken)
-                        {
-
+                   
                             if (user.Email.ToLower() != email.ToLower())
                             {
                                 user.Email = email;
@@ -292,8 +300,17 @@ namespace SellPhones.Service.Implementation
 
                             UnitOfWork.UserRepository.Update(user);
                             await UnitOfWork.SaveChangesAsync();
-                        }
-                        var data = await GenerateResponse(user);
+
+                        var data = new LoginResponseDto
+                        {
+                            UserId = user.Id,
+                            //RoleName = roleName.ToString(),
+                            //GroupRoles = groupRoles,
+                            //UserRoles = usrRoles,
+                            Name = user.Name,
+                            //Token = token,
+                            ExpiredAt = DateTime.UtcNow.AddHours(24),
+                        };
                         return new ResponseData(data);
                     }
                 }
@@ -301,6 +318,36 @@ namespace SellPhones.Service.Implementation
             catch (Exception ex)
             {
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.INVALID_TOKEN);
+            }
+        }
+
+        // get all customer
+        public async Task<ResponseData> GetAllCustomer(CustomerFillterDTO dto)
+        {
+            try
+            {
+                var query = UnitOfWork.UserRepository.GetAll().Where(x => x.IsDeleted != true);
+                //var data = query.Skip((int)(dto.PageIndex * dto.PageSize))
+                // .Take((int)dto.PageSize)
+                // .Select(x =>
+                // {
+                // }
+                var data = query.Select(x => new CustomerListDTO()
+                {
+                    Id = x.Id,
+                    BirthDay = (DateTime)x.BirthDay,
+                    Email = x.Email,
+                    Gender = (int)x.Gender,
+                    Hometown = x.Hometown,
+                    Name = x.Name,
+                    PhoneNumber = x.PhoneNumber
+                }).ToList();
+
+                return new ResponseData(data);
+            }
+            catch (Exception ex)
+            {
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.SYSTEM_ERROR);
             }
         }
     }

@@ -9,16 +9,16 @@ namespace SellPhones.Domain.Entity
     {
         public int Id { get; set; }
 
-        public string Name { get; set; } = null!;
+        public string? Name { get; set; } = null!;
 
-        public string NameManufactureId { get; set; } = null!;
+        public string? NameManufactureId { get; set; } = null!;
 
         public TYPE_PRODUCT? Type { get; set; }
 
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
-        public bool IsActive { get; set; } = true;
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsActive { get; set; } = true;
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 

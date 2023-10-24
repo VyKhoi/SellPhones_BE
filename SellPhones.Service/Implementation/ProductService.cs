@@ -1,12 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SellPhones.Commons;
 using SellPhones.Data.Interfaces;
 using SellPhones.Domain.Entity;
+using SellPhones.DTO;
+using SellPhones.DTO.Comment;
 using SellPhones.DTO.Commons;
+using SellPhones.DTO.Order;
 using SellPhones.DTO.Product;
 using SellPhones.Service.Interfaces;
 using SellPhones.Services.Extensions;
+using System.Collections.Generic;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SellPhones.Service.Implementation
 {
@@ -49,7 +56,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -317,7 +324,7 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -621,7 +628,6 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-           
                 IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
                     .Where(p => p.IsActive == true && p.IsDeleted == false)
                     .Include(pm => pm.BranchPromotionProducts)
@@ -633,7 +639,6 @@ namespace SellPhones.Service.Implementation
                     .ThenInclude(bpc => bpc.ProductColor) // get product color
                     .ThenInclude(pc => pc.Product)
                     .ThenInclude(p => p.Smartphone)
-
 
                     .Include(pm => pm.BranchPromotionProducts)
                     .ThenInclude(bpp => bpp.BrandProductColor)
@@ -670,9 +675,9 @@ namespace SellPhones.Service.Implementation
                           tmp.Price = bpp.BrandProductColor.ProductColor.Price;
                           tmp.NameColorId = bpp.BrandProductColor.ProductColor.NameColorId;
                           tmp.ImageLink = bpp.BrandProductColor.ProductColor.Product.ImageProducts.Where(x => x.Name.Trim().Equals(bpp.BrandProductColor.ProductColor.NameColorId.Trim())).FirstOrDefault().LinkImg;
-                          
+
                           tmp.DiscountRate = bpp.DiscountRate;
-                        
+
                           tmp.CPU = bpp.BrandProductColor.ProductColor.Product.Smartphone.OperatorSystem;
                           tmp.RAM = bpp.BrandProductColor.ProductColor.Product.Smartphone.Ram;
                           tmp.ROM = bpp.BrandProductColor.ProductColor.Product.Smartphone.Rom;
@@ -688,9 +693,8 @@ namespace SellPhones.Service.Implementation
                           tmp.Amount = bpp.BrandProductColor?.Amount;
                           tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
 
-
                           // image
-                          foreach(var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
+                          foreach (var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
                           {
                               if (i.ProductId != dto.Id)
                               {
@@ -730,28 +734,21 @@ namespace SellPhones.Service.Implementation
                               dtor.Color = k.BrandProductColor?.ProductColor?.NameColorId;
                               dtor.Price = k.BrandProductColor?.ProductColor?.Price;
                               tmp.Color.Add(dtor);
-
                           }
                           tmp.Color = tmp.Color.DistinctBy(x => x.Color).ToList();
-                              // lấy color
+                          // lấy color
 
-
-                              list.Add(tmp);
+                          list.Add(tmp);
                       }
-
-                     
 
                       return list;
                   });
-
-              
-
 
                 return new ResponseData(dataPromotionProduct);
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
@@ -760,7 +757,6 @@ namespace SellPhones.Service.Implementation
         {
             try
             {
-
                 IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
                     .Where(p => p.IsActive == true && p.IsDeleted == false)
                     .Include(pm => pm.BranchPromotionProducts)
@@ -772,7 +768,6 @@ namespace SellPhones.Service.Implementation
                     .ThenInclude(bpc => bpc.ProductColor) // get product color
                     .ThenInclude(pc => pc.Product)
                     .ThenInclude(p => p.Laptop)
-
 
                     .Include(pm => pm.BranchPromotionProducts)
                     .ThenInclude(bpp => bpp.BrandProductColor)
@@ -829,7 +824,6 @@ namespace SellPhones.Service.Implementation
                           tmp.Amount = bpp.BrandProductColor?.Amount;
                           tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
 
-
                           // image
                           foreach (var i in bpp.BrandProductColor?.ProductColor?.Product.ImageProducts)
                           {
@@ -871,33 +865,26 @@ namespace SellPhones.Service.Implementation
                               dtor.Color = k.BrandProductColor?.ProductColor?.NameColorId;
                               dtor.Price = k.BrandProductColor?.ProductColor?.Price;
                               tmp.Color.Add(dtor);
-
                           }
                           tmp.Color = tmp.Color.DistinctBy(x => x.Color).ToList();
                           // lấy color
 
-
                           list.Add(tmp);
                       }
 
-
-
                       return list;
                   });
-
-
-
 
                 return new ResponseData(dataPromotionProduct);
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
 
-        public async Task<ResponseData> SearchDetailProductsync(RequestDetailProductDTO dto)
+        public async Task<ResponseData> SearchDetailProductAsync(RequestDetailProductDTO dto)
         {
             try
             {
@@ -914,7 +901,7 @@ namespace SellPhones.Service.Implementation
                             var rs = await DetailProductLaptopAsync(dto);
                             return rs;
                         }
-                   
+
                     default:
                         {
                             return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
@@ -924,11 +911,10 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
-
 
         #endregion get detail a product of branch
 
@@ -1067,11 +1053,515 @@ namespace SellPhones.Service.Implementation
             }
             catch (Exception ex)
             {
-                _logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
                 return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
             }
         }
 
         #endregion search key product
+
+        #region search price
+
+        public async Task<ResponseData> SearchProductFromToPriceAsync(ProductSearchDto dto)
+        {
+            try
+            {
+                // get all of product promotion curent
+                IEnumerable<Promotion> queryPromotionProduct = (IEnumerable<Promotion>)UnitOfWork.PromotionRepository.GetAll()
+                    .Where(p => p.IsActive == true && p.IsDeleted == false)
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+
+                    .ThenInclude(bpc => bpc.Branch)// get branch
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+                    .ThenInclude(pro => pro.ImageProducts) // get image
+
+                    .Include(pm => pm.BranchPromotionProducts)
+                    .ThenInclude(bpp => bpp.BrandProductColor)
+                    .ThenInclude(bpc => bpc.ProductColor) // get product color
+                    .ThenInclude(pc => pc.Product)
+                    .ThenInclude(pro => pro.Reviews);             // get Reviews
+
+                // fortmat and select list product promotion curent
+                var dataPromotionProduct = queryPromotionProduct
+                  .Select(x =>
+                  {
+                      List<SearchProductOutputDTO> list = new List<SearchProductOutputDTO>();
+                      foreach (var bpp in x.BranchPromotionProducts)
+                      {
+                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || bpp.BrandProductColor.ProductColor.Product.Type != dto.Type || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false)
+                          {
+                              continue;
+                          }
+                          SearchProductOutputDTO tmp = new SearchProductOutputDTO();
+
+                          tmp.Id = bpp.BrandProductColor.ProductColor.Product.Id;
+                          tmp.Name = bpp.BrandProductColor.ProductColor.Product.Name;
+                          tmp.ManufactureName = bpp.BrandProductColor.ProductColor.Product.NameManufactureId;
+
+                          tmp.BranchName = bpp.BrandProductColor.Branch.Name;
+
+                          tmp.CurrentPrice = (double)bpp.BrandProductColor.ProductColor.Price - ((double)bpp.BrandProductColor.ProductColor.Price * bpp.DiscountRate);
+                          tmp.Price = (double)bpp.BrandProductColor.ProductColor.Price;
+                          tmp.DiscountRate = bpp.DiscountRate;
+                          tmp.ProductColorId = bpp.BrandProductColor.ProductColor.Id;
+                          tmp.CurrentColor = bpp.BrandProductColor.ProductColor.NameColorId;
+                          tmp.CurrentImage = bpp.BrandProductColor.ProductColor.Product.ImageProducts
+                          .Where(i => i.Name.Equals(bpp.BrandProductColor.ProductColor.NameColorId.ToString()))?.FirstOrDefault()?.LinkImg;
+
+                          tmp.ReviewTitle = bpp.BrandProductColor?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Title;
+                          tmp.Introduce = bpp.BrandProductColor?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Content;
+                          tmp.Amount = bpp.BrandProductColor?.Amount;
+                          tmp.BranchProductColorId = bpp.BrandProductColor?.Id;
+
+                          list.Add(tmp);
+                      }
+
+                      list = list.DistinctBy(x => x.Id).OrderBy(x => x.Id).ToList();
+
+                      return list;
+                  });
+
+                // get all product
+                IEnumerable<BranchProductColor> queryProduct = UnitOfWork.BranchProductColorRepository.GetAll()
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+                   .ThenInclude(x => x.Reviews)
+
+                   .Include(x => x.ProductColor)
+                   .ThenInclude(x => x.Product)
+                   .ThenInclude(x => x.ImageProducts)
+                   .Include(x => x.Branch)
+                   .Where(x => x.IsActive == true && x.ProductColor.Product.Type == dto.Type && x.IsDeleted == false && x.BranchId == dto.BranchId && (x.ProductColor.Price > dto.PriceFrom && x.ProductColor.Price < dto.PriceTo) == true);
+
+                // fortmat and select list product  (not contain promotion
+                var dataProduct = queryProduct
+                  .Select(x =>
+                  {
+                      SearchProductOutputDTO tmp = new SearchProductOutputDTO();
+
+                      tmp.Id = x.ProductColor.Product.Id;
+                      tmp.Name = x.ProductColor.Product.Name;
+                      tmp.ManufactureName = x.ProductColor.Product.NameManufactureId;
+
+                      tmp.BranchName = x.Branch.Name;
+
+                      tmp.CurrentPrice = (double)x.ProductColor.Price;
+                      tmp.Price = (double)x.ProductColor.Price;
+
+                      tmp.ProductColorId = x.ProductColor.Id;
+                      tmp.CurrentColor = x.ProductColor.NameColorId;
+                      tmp.CurrentImage = x.ProductColor.Product.ImageProducts
+                      .Where(i => i.Name.Equals(x.ProductColor.NameColorId.ToString()))?.FirstOrDefault()?.LinkImg;
+
+                      tmp.ReviewTitle = x?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Title;
+                      tmp.Introduce = x?.ProductColor?.Product?.Reviews?.FirstOrDefault()?.Content;
+                      tmp.Amount = x?.Amount;
+                      tmp.BranchProductColorId = x?.Id;
+
+                      return tmp;
+                  }).OrderBy(X => X.Id).DistinctBy(x => x.Id).ToList();
+
+                // get current (first or defaut promotion) // now code just work with one promotion
+                var lenght = dataPromotionProduct.FirstOrDefault();
+
+                for (int i = 0; i < dataProduct.Count(); i++)
+                {
+                    //int j = 0;
+                    for (int j = 0; j < lenght.Count(); j++)
+                    {
+                        var item = lenght[j];
+                        if (dataProduct[i].BranchProductColorId == item.BranchProductColorId)
+                        {
+                            dataProduct[i] = item;
+                            break;
+                        }
+                        //j++
+                    }
+                }
+
+                return new ResponseData(dataProduct);
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        #endregion search price
+
+        public async Task<ResponseData> OrderLookUp(string deliveryPhone)
+        {
+            try
+            {
+                var od = UnitOfWork.OrderRepository.GetAll().Where(x => x.DeliveryPhone == deliveryPhone.Trim())
+                .Include(x => x.OrderDetails)
+                .ThenInclude(x => x.BrandProductColor)
+                .ThenInclude(x => x.ProductColor)
+                .ThenInclude(x => x.Product).ToList();
+
+                var data = od.Select(x =>
+                {
+                    var tmp = new OrderLookupDTO();
+                    tmp.OrderID = x.Id;
+                    tmp.Status = x.Status;
+                    tmp.ToltalPrice = (double)x.OrderDetails.Sum(x => x.UnitPrice * x.Quantity);
+                    tmp.OrderDate = x.OrderDate;
+                    // select product
+                    //SELECT p.id AS id_product,
+                    //            p.Name as Name,
+                    //            od.unit_price as unitPrice,
+                    //            od.Quantity as quantity,
+                    //            pc.nameColor_id as nameColor,
+                    //            bpc.id AS id_branch_product_color
+
+                    List<ProductDetailLookUp> lsTMP = x.OrderDetails.Select(x =>
+                    {
+                        var tmp = new ProductDetailLookUp();
+
+                        tmp.ProductId = (int)(x.BrandProductColor?.ProductColor?.Product?.Id);
+                        tmp.Name = (x.BrandProductColor?.ProductColor?.Product.Name);
+                        tmp.UnitPrice = (double)x.UnitPrice;
+                        tmp.Quantity = x.Quantity;
+                        tmp.NameColor = x.BrandProductColor.ProductColor.NameColorId;
+                        tmp.BranchProductColorID = x.BrandProductColor.Id;
+
+                        return tmp;
+                    }).ToList();
+
+                    tmp.ProductDetail = lsTMP;
+                    tmp.BranchProductColorId = x.OrderDetails.FirstOrDefault().BrandProductColorId;
+
+                    return tmp;
+                });
+                return new ResponseData(data);
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public string GetComment(int productId)
+        {
+            try
+            {
+                var comments = UnitOfWork.CommentRepository.GetAll()
+               .Where(c => c.ProductId == productId && c.IsDeleted != true)
+               .Include(c => c.InverseIdReplyNavigations) // load các comment phản hồi
+                   .ThenInclude(r => r.User) // load thông tin IdUser của các comment phản hồi
+               .Select(c => new
+               {
+                   Id = c.Id,
+                   userName = c.User.UserName,
+                   contentComment = c.ContentComment,
+                   idUser = c.User.Id,
+                   idProduct = c.ProductId,
+                   commentReply = c.InverseIdReplyNavigations
+                       .Select(r => new
+                       {
+                           Id = r.Id,
+                           userName = r.User.UserName,
+                           contentComment = r.ContentComment,
+                           idUser = r.User.Id,
+                           idProduct = r.ProductId,// lấy thông tin userName của các comment phản hồi
+                       })
+               })
+               .ToList();
+
+                string json2 = JsonConvert.SerializeObject(comments);
+                return json2;
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return "";
+            }
+        }
+
+        public Comment AddComment(CommentPost comment)
+        {
+            var cm = new Comment()
+            {
+                ContentComment = comment.ContentComment,
+                ProductId = (int)comment.IdProductId,
+                UserId = comment.IdUserId,
+                ReplyId = comment.IdReply
+            };
+
+            UnitOfWork.CommentRepository.Add(cm);
+            UnitOfWork.SaveChanges();
+
+            return cm;
+        }
+
+        public async Task<ResponseData> DeleteCommentOfProduct(int id)
+        {
+            try
+            {
+                var comment = await UnitOfWork.CommentRepository.FindAsync(id);
+                if (comment == null)
+                {
+                    return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
+                }
+                comment.IsDeleted = true;
+                // Xóa tất cả các comment reply của comment này
+                var replyComments = UnitOfWork.CommentRepository.GetAll().Where(c => c.ReplyId == comment.Id);
+                foreach (var x in replyComments)
+                {
+                    x.IsDeleted = true;
+                }
+                UnitOfWork.CommentRepository.Update(replyComments);
+
+                // Xóa comment này
+                UnitOfWork.CommentRepository.Update(comment);
+
+                await UnitOfWork.SaveChangesAsync();
+
+                return new ResponseData();
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public async Task<ResponseData> ReplyComment(CommentPostDTO comment)
+        {
+            try
+            {
+                var cm = new Comment()
+                {
+                    ContentComment = comment.ContentComment,
+                    ProductId = (int)comment.ProductId,
+                    UserId = comment.UserId,
+                    ReplyId = comment.Reply
+                };
+
+                UnitOfWork.CommentRepository.Add(cm);
+                UnitOfWork.SaveChanges();
+
+                return new ResponseData(cm);
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public async Task<ResponseData> GetAllProduct(ProductSearchDto dto)
+        {
+            try
+            {
+                var query = UnitOfWork.ProductRepository.GetAll().Where(x => x.IsDeleted != true);
+
+                var data = query.Select(x => new ProductListDto()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ManufactureName = x.NameManufactureId,
+                    Type = x.Type
+                }).ToList();
+
+                return new ResponseData(data);
+            }
+            catch (Exception ex)
+            {
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.SYSTEM_ERROR);
+            }
+        }
+
+        public string AddProduct(ProductListDto dto)
+        {
+            try
+            {
+                Domain.Entity.Product product = new Domain.Entity.Product()
+                {
+                    Name = dto.Name,
+                    Type = dto.Type,
+                    NameManufactureId = dto.ManufactureName,
+                };
+
+                UnitOfWork.ProductRepository.Add(product);
+                UnitOfWork.SaveChanges();
+
+                // lưu hình ảnh
+                for (int i = 0; i < dto.Images.Count; i++)
+                {
+                    ImageProduct imageproduct = new ImageProduct()
+                    {
+                        Name = dto.Images[i].NameImage,
+                        LinkImg = dto.Images[i].Images,
+                        ProductId = product.Id
+                    };
+                    UnitOfWork.ImageProductRepository.Add(imageproduct);
+                    UnitOfWork.SaveChanges();
+                }
+
+                // lưu introduce cho sản phẩm
+                Random random = new Random();
+                int randomNumber = random.Next(9999999);
+                Domain.Entity.Review review = new Domain.Entity.Review()
+                {
+                    Id = randomNumber,
+
+                    Title = dto.Title,
+                    Content = dto.Content,
+                    ProductId = product.Id
+                };
+                UnitOfWork.ReviewRepository.Add(review);
+                UnitOfWork.SaveChanges();
+                // lưu các thông số sản phẩm
+
+                if (dto.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    Laptop lt = new Laptop()
+                    {
+                        Id = product.Id,
+
+                        Cpu = dto.CPU,
+
+                        Ram = dto.RAM,
+
+                        Rom = dto.ROM,
+
+                        GraphicCard = dto.GraphicCard,
+
+                        Battery = dto.Battery,
+                        OperatorSystem = dto.OperatorSystem,
+
+                        Others = dto.Others,
+                    };
+                    UnitOfWork.LaptopRepository.Add(lt);
+                    UnitOfWork.SaveChanges();
+                }
+
+                if (dto.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    Smartphone lt = new Smartphone()
+                    {
+                        Id = product.Id,
+
+                        Cpu = dto.CPU,
+
+                        Ram = dto.RAM,
+
+                        Rom = dto.ROM,
+
+                        Battery = dto.Battery,
+                        OperatorSystem = dto.OperatorSystem,
+
+                        Others = dto.Others,
+                    };
+                    UnitOfWork.SmartphoneRepository.Add(lt);
+                    UnitOfWork.SaveChanges();
+                }
+
+                UnitOfWork.SaveChanges();
+
+                // trả về cái respones
+                var options = new JsonSerializerOptions
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve
+                };
+
+                string json = System.Text.Json.JsonSerializer.Serialize(product, options);
+
+                return json;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
+        public string GetDetailBasicProduct(int id)
+        {
+            try
+            {
+                // get infor of product table
+                Product product = UnitOfWork.ProductRepository.Find(id);
+                if (product == null)
+                {
+                    return null;
+                }
+
+                // get image ("options sau này ")
+
+                // get review 
+                Review review = UnitOfWork.ReviewRepository.GetAll().FirstOrDefault(p => p.ProductId == product.Id);
+
+                // get specifications bbelong to type
+                Smartphone smartphone = null;
+                Laptop laptop = null;
+                if (product.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    smartphone = UnitOfWork.SmartphoneRepository.Find(product.Id);
+                }
+                if (product.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    laptop = UnitOfWork.LaptopRepository.Find(product.Id);
+                }
+
+                var tmp = new ProductListDto();
+
+
+
+                tmp.Id = id;
+                tmp.Name = product.Name;
+                tmp.ManufactureName = product.NameManufactureId;
+                tmp.Type = product.Type;
+                tmp.Images = new List<ImagesProduct>();
+
+                tmp.Title = review != null ? review.Title : "";
+                tmp.Content = review != null ? review.Content : "";
+
+
+                // if the product is phone , we will get infor about that propertires
+                if (product.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    tmp.CPU = smartphone.Cpu;
+                    tmp.RAM = smartphone.Ram;
+                    tmp.ROM = smartphone.Rom;
+                    tmp.Battery = smartphone.Battery;
+                    tmp.OperatorSystem = smartphone.OperatorSystem;
+                    tmp.Others = smartphone.Others;
+                }
+
+
+                if (product.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    tmp.CPU = laptop.Cpu;
+                    tmp.RAM = laptop.Ram;
+                    tmp.ROM = laptop.Rom;
+                    tmp.Battery = laptop.Battery;
+                    tmp.OperatorSystem = laptop.OperatorSystem;
+                    tmp.Others = laptop.Others;
+                }
+
+                string json = JsonConvert.SerializeObject(tmp);
+                return json;
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }
