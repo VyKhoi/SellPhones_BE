@@ -8,12 +8,12 @@ namespace SellPhones.Domain.Entity
     {
         public int Id { get; set; }
 
-        public string Title { get; set; } = null!;
+        public string? Title { get; set; } = null!;
 
-        public string Content { get; set; } = null!;
-        public bool IsActive { get; set; } = true;
-        public bool IsDeleted { get; set; } = false;
-        public int ProductId { get; set; }
+        public string? Content { get; set; } = null!;
+        public bool? IsActive { get; set; } = true;
+        public bool ?IsDeleted { get; set; } = false;
+        public int? ProductId { get; set; }
         public DateTime? AddedTimestamp { get; set; }
         public DateTime? ChangedTimestamp { get; set; }
 

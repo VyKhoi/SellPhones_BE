@@ -17,7 +17,6 @@ namespace SellPhones.API.Controllers
 
         public AuthController(IAccountService accountService)
         {
-
             this._accountService = accountService;
         }
 
@@ -34,11 +33,10 @@ namespace SellPhones.API.Controllers
                 {
                     UserName = model.UserName,
                     Password = model.Password,
-                   
+
                     FirebaseTokenWeb = model.FirebaseToken
                 };
                 var response = await _accountService.LoginAsync(loginDto);
-
 
                 return Ok(response);
             }
@@ -48,9 +46,8 @@ namespace SellPhones.API.Controllers
             }
         }
 
-
         /// <summary>
-        /// Tạo tài khoản học viên
+        /// Tạo tài khách hàng
         /// </summary>
         [HttpPost("Create")]
         public async Task<ActionResult> CreateLearner([FromBody] UserCreateAccountDto dto)
@@ -59,10 +56,28 @@ namespace SellPhones.API.Controllers
             {
                 return Ok(new ResponseData(HttpStatusCode.BadRequest, false, Commons.ErrorCode.FULLNAME_IS_REQUIRE));
             }
-         
+
             var response = await _accountService.CreateCustomerAsync(dto);
             return Ok(response);
         }
 
+
+        /// <summary>
+        /// Login with google
+        /// </summary>
+        [HttpPost("LoginSocial")]
+        [AllowAnonymous]
+        public async Task<ActionResult> LoginWithSocialAsync([FromBody] LoginWithSocialDto model)
+        {
+            try
+            {
+                var response = await _accountService.LoginWithSocialAsync(model);
+                return Ok(response);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace SellPhones.Service.Implementation
                 UserName = string.Empty,
                 PassWord = string.Empty,
                 PhoneNumber = customer.DeliveryPhone,
-                Hometown = customer.DeliveryAddress,               
+                Hometown = customer.DeliveryAddress,
             };
             // Lưu đối tượng User vào CSDL
             UnitOfWork.UserRepository.Add(user_order);

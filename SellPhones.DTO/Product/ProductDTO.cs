@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SellPhones.DTO.Product
+﻿namespace SellPhones.DTO.Product
 {
     public class ProductPaymentStripeDTO
     {
@@ -27,12 +21,10 @@ namespace SellPhones.DTO.Product
         public decimal? Amount { get; set; }
         public List<ProductPaymentStripeDTO>? Products { get; set; }
         public CustomerPaymentStripeDTO? Customer { get; set; }
-
     }
 
     public class StripePaymentTokent
     {
         public string? ClientSecret { get; set; }
-
     }
 }

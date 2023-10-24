@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SellPhones.DTO.Order;
 using SellPhones.DTO.Product;
-using SellPhones.Service.Implementation;
 using SellPhones.Service.Interfaces;
 
 namespace SellPhones.API.Controllers
@@ -13,9 +12,9 @@ namespace SellPhones.API.Controllers
     {
         private IOrderService _orderService;
         private IPayment _payment;
+
         public OrderController(IOrderService orderService, IPayment payment)
         {
-
             this._orderService = orderService;
             this._payment = payment;
         }
@@ -27,14 +26,11 @@ namespace SellPhones.API.Controllers
             return Ok(rs);
         }
 
-        
         [HttpPost("checkout")]
         public async Task<ActionResult> PaymentStripe([FromBody] PaymentStripeDTO dto)
         {
-            var rs =  _payment.PaymentStripeAsync(dto);
+            var rs = _payment.PaymentStripeAsync(dto);
             return Ok(rs);
         }
-
-
     }
 }

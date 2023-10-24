@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SellPhones.DTO.User
+﻿namespace SellPhones.DTO.User
 {
     public class UserCreateAccountDto
     {
@@ -15,7 +9,5 @@ namespace SellPhones.DTO.User
         public string? PassWord { get; set; }
 
         public bool IsActive { get; set; } = true;
-
-
     }
 }

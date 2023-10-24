@@ -1,18 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using SellPhones.Commons;
 using SellPhones.Data.Interfaces;
 using SellPhones.DTO.Commons;
 using SellPhones.DTO.Product;
 using SellPhones.Service.Interfaces;
 using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Net;
-using SellPhones.Commons;
 
 namespace SellPhones.Service.Implementation
 {

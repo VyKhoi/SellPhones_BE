@@ -1,5 +1,4 @@
 ﻿using SellPhones.Commons;
-using SellPhones.Domain.Entity;
 
 namespace SellPhones.DTO.Product
 {
@@ -10,8 +9,7 @@ namespace SellPhones.DTO.Product
         public string? ManufactureName { get; set; }
         public TYPE_PRODUCT? Type { get; set; }
         public string? BranchName { get; set; }
-      
- 
+
         public double? CurrentPrice { get; set; }
         public double? Price { get; set; }
         public double? DiscountRate { get; set; }
@@ -27,13 +25,25 @@ namespace SellPhones.DTO.Product
         public string? Battery { get; set; }
         public string? Others { get; set; }
         public string? GraphicCard { get; set; }
-        public string? ConnectionType { get; set; } 
+        public string? ConnectionType { get; set; }
 
         public string? Design { get; set; }
 
         public string? FrequencyResponse { get; set; }
         public int? Amount { get; set; }
         public int? BranchProductColorId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+
+
+        public List<ImagesProduct> Images { get; set; }
+    }
+
+    public class ImagesProduct
+    {
+        public string NameImage { get; set; }
+        public string Images { get; set; }
+
 
     }
 }

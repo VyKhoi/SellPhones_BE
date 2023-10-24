@@ -1,3 +1,5 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using log4net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
@@ -49,7 +51,6 @@ builder.Services.AddCors(p => p.AddPolicy("MyCors", builder =>
         .AllowAnyHeader()
         .AllowCredentials();
 }));
-
 
 StripeConfiguration.ApiKey = "sk_test_51Mm6CAJTSCX72rEN0osGovCVaSKimGjDCkJjqJmA4vxPFvOav5pfxsJwuaNsm2GQOObTWTsiyY5zPog6FIrVBSgf00zDD66h8d";
 
@@ -111,6 +112,15 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
+});
+
+
+//Init firebase
+FirebaseApp.Create(new AppOptions()
+{
+
+    Credential = GoogleCredential.FromFile("./firebase.json"),
+
 });
 
 builder.Services.AddAuthorization();

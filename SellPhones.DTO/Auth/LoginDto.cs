@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using SellPhones.Domain.Entity.Identity;
+﻿using SellPhones.Domain.Entity.Identity;
+using System.ComponentModel.DataAnnotations;
+
 namespace SellPhones.DTO.Auth
 {
     public class LoginDto
@@ -11,7 +12,6 @@ namespace SellPhones.DTO.Auth
         public string Password { get; set; } = string.Empty;
 
         public string? FirebaseToken { set; get; }
-       
     }
 
     public class LoginBodyDto
@@ -22,19 +22,17 @@ namespace SellPhones.DTO.Auth
         [Required(ErrorMessage = "Passwod is required.")]
         public string Password { get; set; } = string.Empty;
 
-
         public string? FirebaseTokenWeb { set; get; }
     }
 
     public class LoginWithSocialDto
     {
-        public string AccesssToken { get; set; }
-        public string Uid { get; set; }
-        public TYPE_LOGIN TypeLogin { get; set; }
+        public string? AccesssToken { get; set; }
+        public string? Uid { get; set; }
+        public TYPE_LOGIN? TypeLogin { get; set; }
         public string? FirebaseToken { set; get; }
         public string? Email { set; get; }
         public string? DisplayName { set; get; }
- 
     }
 
     public class LoginResponseDto
@@ -48,6 +46,6 @@ namespace SellPhones.DTO.Auth
 
         public List<string>? GroupRoles { get; set; }
         public List<string>? UserRoles { get; set; }
-        public string?Name { get; set; }
+        public string? Name { get; set; }
     }
 }

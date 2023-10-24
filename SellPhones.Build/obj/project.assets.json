@@ -1824,27 +1824,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
       "projectName": "SellPhones.Build",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Build\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\SellPhones.Build.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Build\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -1852,8 +1850,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\VyKhoi\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
+            "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\SELLPHONE\\BE\\SellPhones_BE\\SellPhones.Data\\SellPhones.Data.csproj"
             }
           }
         }
@@ -1925,7 +1923,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

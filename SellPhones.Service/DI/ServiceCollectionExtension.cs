@@ -65,7 +65,6 @@ namespace SellPhones.Services.DI
             //
             services.AddScoped<IPayment, PaymentService>();
 
-
             return services;
         }
     }
