@@ -17,6 +17,7 @@ namespace SellPhones.Domain.Entity.Identity
         [Display(Name = "4")]
         Apple = 4,
     }
+
     public class User : IdentityUser<Guid>, IAudit
     {
         public string? Code { get; set; }

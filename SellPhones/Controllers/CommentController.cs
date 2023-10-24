@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SellPhones.DTO.Comment;
-using SellPhones.DTO.Product;
-using SellPhones.Service.Implementation;
 using SellPhones.Service.Interfaces;
 
 namespace SellPhones.API.Controllers
@@ -11,12 +9,10 @@ namespace SellPhones.API.Controllers
     [ApiVersion("1.0")]
     public class CommentController : BaseController
     {
-
         private ICommentService _commentService;
 
         public CommentController(ICommentService commentService)
         {
-
             this._commentService = commentService;
         }
 
@@ -41,7 +37,7 @@ namespace SellPhones.API.Controllers
         }
 
         /// <summary>
-        /// delete a comment 
+        /// delete a comment
         /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(int id)
@@ -49,6 +45,5 @@ namespace SellPhones.API.Controllers
             var rs = await _commentService.DeleteAsync(id);
             return Ok(rs);
         }
-
     }
 }

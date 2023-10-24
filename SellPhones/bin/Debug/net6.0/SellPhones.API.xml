@@ -11,7 +11,12 @@
         </member>
         <member name="M:SellPhones.API.Controllers.AuthController.CreateLearner(SellPhones.DTO.User.UserCreateAccountDto)">
             <summary>
-            Tạo tài khoản học viên
+            Tạo tài khách hàng
+            </summary>
+        </member>
+        <member name="M:SellPhones.API.Controllers.AuthController.LoginWithSocialAsync(SellPhones.DTO.Auth.LoginWithSocialDto)">
+            <summary>
+            Login with google
             </summary>
         </member>
         <member name="M:SellPhones.API.Controllers.CommentController.GellAll(System.Int32)">
@@ -26,7 +31,12 @@
         </member>
         <member name="M:SellPhones.API.Controllers.CommentController.DeleteAsync(System.Int32)">
             <summary>
-            delete a comment 
+            delete a comment
+            </summary>
+        </member>
+        <member name="M:SellPhones.API.Controllers.CustomerController.GetAllCustomer(SellPhones.DTO.Customer.CustomerFillterDTO)">
+            <summary>
+            Danh sách khach hang
             </summary>
         </member>
         <member name="M:SellPhones.API.Controllers.ProductController.SearchProduct(SellPhones.DTO.Product.ProductSearchDto)">
@@ -50,7 +60,7 @@
             Chi tiết sản phẩm
             </summary>
             <param name="Id">ProductId</param>   BranchId
-            <param name="BranchId">BranchId</param>  
+            <param name="BranchId">BranchId</param>
             <returns>Chi tiết sản phẩm</returns>
         </member>
         <member name="M:SellPhones.API.Controllers.ProductController.OrderLookUp(System.String)">
@@ -58,7 +68,7 @@
             tra cuu san pham
             </summary>
             <param name="Id">ProductId</param>   BranchId
-            <param name="BranchId">BranchId</param>  
+            <param name="BranchId">BranchId</param>
             <returns>Chi tiết sản phẩm</returns>
         </member>
         <member name="M:SellPhones.API.Controllers.ProductController.GetComments(System.Int32)">
@@ -66,7 +76,7 @@
             danh sách comment
             </summary>
             <param name="Id">ProductId</param>   BranchId
-            <param name="BranchId">BranchId</param>  
+            <param name="BranchId">BranchId</param>
             <returns>Chi tiết sản phẩm</returns>
         </member>
         <member name="M:SellPhones.API.Controllers.ProductController.AddComment(SellPhones.DTO.CommentPost)">
@@ -74,7 +84,45 @@
             danh sách comment
             </summary>
             <param name="Id">ProductId</param>   BranchId
-            <param name="BranchId">BranchId</param>  
+            <param name="BranchId">BranchId</param>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.AddComment(System.String)">
+            <summary>
+            tra cứu đơn hàng
+            </summary>
+            <param name="Id">ProductId</param>   BranchId
+            <param name="BranchId">BranchId</param>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.AddComment(System.Int32)">
+            <summary>
+            xóa comment của san pham
+            </summary>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.ReplyComment(SellPhones.DTO.Comment.CommentPostDTO)">
+            <summary>
+            reply comment cua san pham
+            </summary>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.GetAllProduct(SellPhones.DTO.Product.ProductSearchDto)">
+            <summary>
+            get all thong tin co ban product
+            </summary>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.AddProduct(SellPhones.DTO.Product.ProductListDto)">
+            <summary>
+            Them product
+            </summary>
+            <returns>Chi tiết sản phẩm</returns>
+        </member>
+        <member name="M:SellPhones.API.Controllers.ProductController.GetDetailBasicProduct(System.Int32)">
+            <summary>
+            lấy thông tin chi tiết căn bản
+            </summary>
             <returns>Chi tiết sản phẩm</returns>
         </member>
     </members>

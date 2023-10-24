@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SellPhones.DTO
+﻿namespace SellPhones.DTO
 {
     public class CommentPost
     {
-
         public string? ContentComment { get; set; } = null!;
 
         public int? IdProductId { get; set; }

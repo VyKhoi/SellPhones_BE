@@ -4,11 +4,16 @@ using SellPhones.Commons;
 using SellPhones.Data.Interfaces;
 using SellPhones.Domain.Entity;
 using SellPhones.DTO;
+using SellPhones.DTO.Comment;
 using SellPhones.DTO.Commons;
+using SellPhones.DTO.Order;
 using SellPhones.DTO.Product;
 using SellPhones.Service.Interfaces;
 using SellPhones.Services.Extensions;
+using System.Collections.Generic;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SellPhones.Service.Implementation
 {
@@ -1092,7 +1097,7 @@ namespace SellPhones.Service.Implementation
                       List<SearchProductOutputDTO> list = new List<SearchProductOutputDTO>();
                       foreach (var bpp in x.BranchPromotionProducts)
                       {
-                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || bpp.BrandProductColor.ProductColor.Product.Type != dto.Type || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false  )                        
+                          if (bpp.IsDeleted == true || bpp.BrandProductColor.BranchId != dto.BranchId || bpp.BrandProductColor.ProductColor.Product.Type != dto.Type || (bpp.BrandProductColor.ProductColor.Price > dto.PriceFrom && bpp.BrandProductColor.ProductColor.Price < dto.PriceTo) == false)
                           {
                               continue;
                           }
@@ -1197,7 +1202,6 @@ namespace SellPhones.Service.Implementation
 
         #endregion search price
 
-
         public async Task<ResponseData> OrderLookUp(string deliveryPhone)
         {
             try
@@ -1208,11 +1212,41 @@ namespace SellPhones.Service.Implementation
                 .ThenInclude(x => x.ProductColor)
                 .ThenInclude(x => x.Product).ToList();
 
+                var data = od.Select(x =>
+                {
+                    var tmp = new OrderLookupDTO();
+                    tmp.OrderID = x.Id;
+                    tmp.Status = x.Status;
+                    tmp.ToltalPrice = (double)x.OrderDetails.Sum(x => x.UnitPrice * x.Quantity);
+                    tmp.OrderDate = x.OrderDate;
+                    // select product
+                    //SELECT p.id AS id_product,
+                    //            p.Name as Name,
+                    //            od.unit_price as unitPrice,
+                    //            od.Quantity as quantity,
+                    //            pc.nameColor_id as nameColor,
+                    //            bpc.id AS id_branch_product_color
 
+                    List<ProductDetailLookUp> lsTMP = x.OrderDetails.Select(x =>
+                    {
+                        var tmp = new ProductDetailLookUp();
 
+                        tmp.ProductId = (int)(x.BrandProductColor?.ProductColor?.Product?.Id);
+                        tmp.Name = (x.BrandProductColor?.ProductColor?.Product.Name);
+                        tmp.UnitPrice = (double)x.UnitPrice;
+                        tmp.Quantity = x.Quantity;
+                        tmp.NameColor = x.BrandProductColor.ProductColor.NameColorId;
+                        tmp.BranchProductColorID = x.BrandProductColor.Id;
 
-            
-            return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
+                        return tmp;
+                    }).ToList();
+
+                    tmp.ProductDetail = lsTMP;
+                    tmp.BranchProductColorId = x.OrderDetails.FirstOrDefault().BrandProductColorId;
+
+                    return tmp;
+                });
+                return new ResponseData(data);
             }
             catch (Exception ex)
             {
@@ -1221,12 +1255,12 @@ namespace SellPhones.Service.Implementation
             }
         }
 
-        public  string GetComment(int productId)
+        public string GetComment(int productId)
         {
             try
             {
                 var comments = UnitOfWork.CommentRepository.GetAll()
-               .Where(c => c.ProductId == productId)
+               .Where(c => c.ProductId == productId && c.IsDeleted != true)
                .Include(c => c.InverseIdReplyNavigations) // load các comment phản hồi
                    .ThenInclude(r => r.User) // load thông tin IdUser của các comment phản hồi
                .Select(c => new
@@ -1248,7 +1282,6 @@ namespace SellPhones.Service.Implementation
                })
                .ToList();
 
-
                 string json2 = JsonConvert.SerializeObject(comments);
                 return json2;
             }
@@ -1258,7 +1291,6 @@ namespace SellPhones.Service.Implementation
                 return "";
             }
         }
-
 
         public Comment AddComment(CommentPost comment)
         {
@@ -1276,5 +1308,260 @@ namespace SellPhones.Service.Implementation
             return cm;
         }
 
+        public async Task<ResponseData> DeleteCommentOfProduct(int id)
+        {
+            try
+            {
+                var comment = await UnitOfWork.CommentRepository.FindAsync(id);
+                if (comment == null)
+                {
+                    return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL);
+                }
+                comment.IsDeleted = true;
+                // Xóa tất cả các comment reply của comment này
+                var replyComments = UnitOfWork.CommentRepository.GetAll().Where(c => c.ReplyId == comment.Id);
+                foreach (var x in replyComments)
+                {
+                    x.IsDeleted = true;
+                }
+                UnitOfWork.CommentRepository.Update(replyComments);
+
+                // Xóa comment này
+                UnitOfWork.CommentRepository.Update(comment);
+
+                await UnitOfWork.SaveChangesAsync();
+
+                return new ResponseData();
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public async Task<ResponseData> ReplyComment(CommentPostDTO comment)
+        {
+            try
+            {
+                var cm = new Comment()
+                {
+                    ContentComment = comment.ContentComment,
+                    ProductId = (int)comment.ProductId,
+                    UserId = comment.UserId,
+                    ReplyId = comment.Reply
+                };
+
+                UnitOfWork.CommentRepository.Add(cm);
+                UnitOfWork.SaveChanges();
+
+                return new ResponseData(cm);
+            }
+            catch (Exception ex)
+            {
+                //_logger!.LogError($"Search Customer, Exception: {ex.Message}");
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.FAIL, ex.Message);
+            }
+        }
+
+        public async Task<ResponseData> GetAllProduct(ProductSearchDto dto)
+        {
+            try
+            {
+                var query = UnitOfWork.ProductRepository.GetAll().Where(x => x.IsDeleted != true);
+
+                var data = query.Select(x => new ProductListDto()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ManufactureName = x.NameManufactureId,
+                    Type = x.Type
+                }).ToList();
+
+                return new ResponseData(data);
+            }
+            catch (Exception ex)
+            {
+                return new ResponseData(HttpStatusCode.BadRequest, false, ErrorCode.SYSTEM_ERROR);
+            }
+        }
+
+        public string AddProduct(ProductListDto dto)
+        {
+            try
+            {
+                Domain.Entity.Product product = new Domain.Entity.Product()
+                {
+                    Name = dto.Name,
+                    Type = dto.Type,
+                    NameManufactureId = dto.ManufactureName,
+                };
+
+                UnitOfWork.ProductRepository.Add(product);
+                UnitOfWork.SaveChanges();
+
+                // lưu hình ảnh
+                for (int i = 0; i < dto.Images.Count; i++)
+                {
+                    ImageProduct imageproduct = new ImageProduct()
+                    {
+                        Name = dto.Images[i].NameImage,
+                        LinkImg = dto.Images[i].Images,
+                        ProductId = product.Id
+                    };
+                    UnitOfWork.ImageProductRepository.Add(imageproduct);
+                    UnitOfWork.SaveChanges();
+                }
+
+                // lưu introduce cho sản phẩm
+                Random random = new Random();
+                int randomNumber = random.Next(9999999);
+                Domain.Entity.Review review = new Domain.Entity.Review()
+                {
+                    Id = randomNumber,
+
+                    Title = dto.Title,
+                    Content = dto.Content,
+                    ProductId = product.Id
+                };
+                UnitOfWork.ReviewRepository.Add(review);
+                UnitOfWork.SaveChanges();
+                // lưu các thông số sản phẩm
+
+                if (dto.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    Laptop lt = new Laptop()
+                    {
+                        Id = product.Id,
+
+                        Cpu = dto.CPU,
+
+                        Ram = dto.RAM,
+
+                        Rom = dto.ROM,
+
+                        GraphicCard = dto.GraphicCard,
+
+                        Battery = dto.Battery,
+                        OperatorSystem = dto.OperatorSystem,
+
+                        Others = dto.Others,
+                    };
+                    UnitOfWork.LaptopRepository.Add(lt);
+                    UnitOfWork.SaveChanges();
+                }
+
+                if (dto.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    Smartphone lt = new Smartphone()
+                    {
+                        Id = product.Id,
+
+                        Cpu = dto.CPU,
+
+                        Ram = dto.RAM,
+
+                        Rom = dto.ROM,
+
+                        Battery = dto.Battery,
+                        OperatorSystem = dto.OperatorSystem,
+
+                        Others = dto.Others,
+                    };
+                    UnitOfWork.SmartphoneRepository.Add(lt);
+                    UnitOfWork.SaveChanges();
+                }
+
+                UnitOfWork.SaveChanges();
+
+                // trả về cái respones
+                var options = new JsonSerializerOptions
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve
+                };
+
+                string json = System.Text.Json.JsonSerializer.Serialize(product, options);
+
+                return json;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
+        public string GetDetailBasicProduct(int id)
+        {
+            try
+            {
+                // get infor of product table
+                Product product = UnitOfWork.ProductRepository.Find(id);
+                if (product == null)
+                {
+                    return null;
+                }
+
+                // get image ("options sau này ")
+
+                // get review 
+                Review review = UnitOfWork.ReviewRepository.GetAll().FirstOrDefault(p => p.ProductId == product.Id);
+
+                // get specifications bbelong to type
+                Smartphone smartphone = null;
+                Laptop laptop = null;
+                if (product.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    smartphone = UnitOfWork.SmartphoneRepository.Find(product.Id);
+                }
+                if (product.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    laptop = UnitOfWork.LaptopRepository.Find(product.Id);
+                }
+
+                var tmp = new ProductListDto();
+
+
+
+                tmp.Id = id;
+                tmp.Name = product.Name;
+                tmp.ManufactureName = product.NameManufactureId;
+                tmp.Type = product.Type;
+                tmp.Images = new List<ImagesProduct>();
+
+                tmp.Title = review != null ? review.Title : "";
+                tmp.Content = review != null ? review.Content : "";
+
+
+                // if the product is phone , we will get infor about that propertires
+                if (product.Type == TYPE_PRODUCT.SMARTPHONE)
+                {
+                    tmp.CPU = smartphone.Cpu;
+                    tmp.RAM = smartphone.Ram;
+                    tmp.ROM = smartphone.Rom;
+                    tmp.Battery = smartphone.Battery;
+                    tmp.OperatorSystem = smartphone.OperatorSystem;
+                    tmp.Others = smartphone.Others;
+                }
+
+
+                if (product.Type == TYPE_PRODUCT.LAPTOP)
+                {
+                    tmp.CPU = laptop.Cpu;
+                    tmp.RAM = laptop.Ram;
+                    tmp.ROM = laptop.Rom;
+                    tmp.Battery = laptop.Battery;
+                    tmp.OperatorSystem = laptop.OperatorSystem;
+                    tmp.Others = laptop.Others;
+                }
+
+                string json = JsonConvert.SerializeObject(tmp);
+                return json;
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
     }
 }

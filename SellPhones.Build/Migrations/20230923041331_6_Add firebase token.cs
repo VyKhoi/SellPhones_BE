@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -9,8 +8,6 @@ namespace SellPhones.Build.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-          
-
             migrationBuilder.AddColumn<string>(
                 name: "FirebaseTokenWeb",
                 table: "Users",
